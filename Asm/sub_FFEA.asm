@@ -42,7 +42,7 @@ seg005:04EC	push    ax
 seg005:04ED	call    BlitImageWithBanking       
 seg005:04F2	add     sp, 10h       
 seg005:04F5	mov     ax, 1       
-seg005:04F8	mov     ds:word_2BEDA, ax       
+seg005:04F8	mov     ds:g_VideoSegmentTable, ax       
 seg005:04FB	push    ax       
 seg005:04FC	call    Video_SelectLayer       
 seg005:0501	add     sp, 2       
@@ -70,7 +70,7 @@ seg005:0534	add     sp, 0Ch
 seg005:0537	push    cs       
 seg005:0538	call    near ptr sub_1191E       
 seg005:053B	sub     ax, ax       
-seg005:053D	mov     ds:word_2BEDA, ax       
+seg005:053D	mov     ds:g_VideoSegmentTable, ax       
 seg005:0540	push    ax       
 seg005:0541	call    Video_SelectLayer       
 seg005:0546	add     sp, 2       

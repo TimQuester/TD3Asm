@@ -63,7 +63,7 @@ seg005:0990	call    LoadPalette
 seg005:0995	add     sp, 2       
 seg005:0998	call    ResetPaletteTable       
 seg005:099D	mov     ax, 1       
-seg005:09A0	mov     ds:word_2BEDA, ax       
+seg005:09A0	mov     ds:g_VideoSegmentTable, ax       
 seg005:09A3	push    ax       
 seg005:09A4	call    Video_SelectLayer       
 seg005:09A9	add     sp, 2       
@@ -79,7 +79,7 @@ seg005:09BF	mov     ax, 13Fh
 seg005:09C2	push    ax       
 seg005:09C3	sub     ax, ax       
 seg005:09C5	push    ax       
-seg005:09C6	call    far ptr EGA_DrawRect       
+seg005:09C6	call    far ptr FillRectWithColor       
 seg005:09CB	add     sp, 8       
 seg005:09CE	mov     ax, 0C7h 	; 'З'       
 seg005:09D1	push    ax       
@@ -87,7 +87,7 @@ seg005:09D2	push    cs
 seg005:09D3	call    near ptr sub_11786       
 seg005:09D6	add     sp, 2       
 seg005:09D9	mov     ax, 1       
-seg005:09DC	mov     ds:word_2BEDA, ax       
+seg005:09DC	mov     ds:g_VideoSegmentTable, ax       
 seg005:09DF	push    ax       
 seg005:09E0	call    Video_SelectLayer       
 seg005:09E5	add     sp, 2       
@@ -368,7 +368,7 @@ seg005:0CB6	push    cs
 seg005:0CB7	call    near ptr sub_1191E       
 seg005:0CBA	mov     byte ptr ds:90F0h, 0       
 seg005:0CBF	sub     ax, ax       
-seg005:0CC1	mov     ds:word_2BEDA, ax       
+seg005:0CC1	mov     ds:g_VideoSegmentTable, ax       
 seg005:0CC4	push    ax       
 seg005:0CC5	call    Video_SelectLayer       
 seg005:0CCA	add     sp, 2       

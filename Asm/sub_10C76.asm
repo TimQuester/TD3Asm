@@ -60,7 +60,7 @@ seg005:11A0	push    ax
 seg005:11A1	call    BlitImageWithBanking       
 seg005:11A6	add     sp, 10h       
 seg005:11A9	mov     ax, 1       
-seg005:11AC	mov     ds:word_2BEDA, ax       
+seg005:11AC	mov     ds:g_VideoSegmentTable, ax       
 seg005:11AF	push    ax       
 seg005:11B0	call    Video_SelectLayer       
 seg005:11B5	add     sp, 2       
@@ -162,7 +162,7 @@ seg005:12BC	push    ax
 seg005:12BD	call    DrawSpriteWithModes       
 seg005:12C2	add     sp, 6       
 seg005:12C5	sub     ax, ax       
-seg005:12C7	mov     ds:word_2BEDA, ax       
+seg005:12C7	mov     ds:g_VideoSegmentTable, ax       
 seg005:12CA	push    ax       
 seg005:12CB	call    Video_SelectLayer       
 seg005:12D0	add     sp, 2       

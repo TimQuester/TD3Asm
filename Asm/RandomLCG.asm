@@ -29,13 +29,13 @@ seg003:0F58	mov     ax, 4E6Dh
 seg003:0F5B	mov     dx, 41C6h       
 seg003:0F5E	push    dx       
 seg003:0F5F	push    ax       
-seg003:0F60	push    ds:word_2BF14       
-seg003:0F64	push    ds:word_2BF12       
+seg003:0F60	push    word ptr ds:g_RandomSeed+2       
+seg003:0F64	push    word ptr ds:g_RandomSeed       
 seg003:0F68	call    __aFlmul       
 seg003:0F6D	add     ax, 3039h       
 seg003:0F70	adc     dx, 0       
-seg003:0F73	mov     ds:word_2BF12, ax       
-seg003:0F76	mov     ds:word_2BF14, dx       
+seg003:0F73	mov     word ptr ds:g_RandomSeed, ax       
+seg003:0F76	mov     word ptr ds:g_RandomSeed+2, dx       
 seg003:0F7A	mov     ax, dx       
 seg003:0F7C	and     ah, 7Fh       
 seg003:0F7F	retf       

@@ -53,7 +53,7 @@ seg009:0E00	mov     ax, 137h
 seg009:0E03	push    ax       
 seg009:0E04	mov     ax, 120h       
 seg009:0E07	push    ax       
-seg009:0E08	call    far ptr EGA_DrawRect       
+seg009:0E08	call    far ptr FillRectWithColor       
 seg009:0E0D	add     sp, 8       
 seg009:0E10	retn       
 seg009:0E11	mov     ds:946Ah, ah       
@@ -70,7 +70,7 @@ seg009:0E2A	mov     ax, 11Fh
 seg009:0E2D	push    ax       
 seg009:0E2E	mov     ax, 11Ch       
 seg009:0E31	push    ax       
-seg009:0E32	call    far ptr EGA_DrawRect       
+seg009:0E32	call    far ptr FillRectWithColor       
 seg009:0E37	add     sp, 8       
 seg009:0E3A	mov     al, ds:0CEAFh       
 seg009:0E3D	sub     ah, ah       
@@ -87,7 +87,7 @@ seg009:0E57	mov     ax, ds:945Eh
 seg009:0E5A	push    ax       
 seg009:0E5B	dec     ax       
 seg009:0E5C	push    ax       
-seg009:0E5D	call    far ptr EGA_DrawRect       
+seg009:0E5D	call    far ptr FillRectWithColor       
 seg009:0E62	add     sp, 4       
 seg009:0E65	add     word ptr ds:945Eh, 3       
 seg009:0E6A	dec     byte ptr ds:946Ah       

@@ -101,7 +101,7 @@
 ;;	call from seg005:18E8 -> sub_113FA
 ;;	call from seg008:07D7 -> DrawSingleSymbol
 ;;	call from seg008:07F9 -> DrawSingleSymbol
-;;	call from seg009:0351 -> unknown
+;;	call from seg009:0351 -> sub_1663C
 ;;	call from seg009:04F6 -> DrawRectangles
 ;;	call from seg009:0BA2 -> sub_16EA5
 ;;	call from seg009:0BD7 -> sub_16EA5

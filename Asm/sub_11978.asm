@@ -132,10 +132,10 @@ seg006:014C	mov     ax, ds:0BC79h
 seg006:014F	mov     cl, 9       
 seg006:0151	shl     ax, cl       
 seg006:0153	mov     [bp+var_2], ax       
-seg006:0156	mov     ax, ds:word_2BF12       
+seg006:0156	mov     ax, word ptr ds:g_RandomSeed       
 seg006:0159	and     ax, 9Ch       
 seg006:015C	mov     [bp+var_10], ax       
-seg006:015F	test    ds:word_2BF12, 4000h       
+seg006:015F	test    word ptr ds:g_RandomSeed, 4000h       
 seg006:0165	jnz     short loc_11AE2       
 seg006:0167	jmp     loc_11AEA       
 seg006:016A	mov     ax, [bp+var_10]       
@@ -177,8 +177,8 @@ seg006:01D1	mov     ax, 60h 	; '`'
 seg006:01D4	mov     dx, 0       
 seg006:01D7	push    dx       
 seg006:01D8	push    ax       
-seg006:01D9	mov     ax, ds:word_2BF12       
-seg006:01DC	mov     dx, ds:word_2BF14       
+seg006:01D9	mov     ax, word ptr ds:g_RandomSeed       
+seg006:01DC	mov     dx, word ptr ds:g_RandomSeed+2       
 seg006:01E0	and     ax, 1Ch       
 seg006:01E3	and     dx, 0       
 seg006:01E6	push    dx       
@@ -770,7 +770,7 @@ seg006:0843	add     ax, cx
 seg006:0845	shr     ax, 1       
 seg006:0847	shr     ax, 1       
 seg006:0849	mov     ds:0E7E8h, ax       
-seg006:084C	test    byte ptr ds:word_2BF12, 60h       
+seg006:084C	test    byte ptr ds:g_RandomSeed, 60h       
 seg006:0851	jz      short loc_121CE       
 seg006:0853	jmp     loc_121F4       
 seg006:0856	cmp     ds:word_2D0D6, 0       
@@ -779,7 +779,7 @@ seg006:085D	jmp     loc_121F4
 seg006:0860	cmp     byte ptr ds:947Ch, 0       
 seg006:0865	jz      short loc_121E2       
 seg006:0867	jmp     loc_121F4       
-seg006:086A	mov     al, byte ptr ds:word_2BF12       
+seg006:086A	mov     al, byte ptr ds:g_RandomSeed       
 seg006:086D	and     ax, 1Ch       
 seg006:0870	shr     ax, 1       
 seg006:0872	shr     ax, 1       
@@ -804,7 +804,7 @@ seg006:08A6	sub     dx, dx
 seg006:08A8	mov     cx, 5       
 seg006:08AB	div     cx       
 seg006:08AD	mov     ds:0E7E8h, ax       
-seg006:08B0	test    byte ptr ds:word_2BF12, 70h       
+seg006:08B0	test    byte ptr ds:g_RandomSeed, 70h       
 seg006:08B5	jz      short loc_12232       
 seg006:08B7	jmp     loc_1224E       
 seg006:08BA	cmp     ds:word_2D0D6, 0       

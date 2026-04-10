@@ -30,7 +30,7 @@ seg004:3402	push    ax
 seg004:3403	call    LoadPalette       
 seg004:3408	add     sp, 2       
 seg004:340B	mov     ax, 1       
-seg004:340E	mov     ds:word_2BEDA, ax       
+seg004:340E	mov     ds:g_VideoSegmentTable, ax       
 seg004:3411	push    ax       
 seg004:3412	call    Video_SelectLayer       
 seg004:3417	add     sp, 2       
@@ -45,7 +45,7 @@ seg004:342B	mov     ax, 6Fh 	; 'o'
 seg004:342E	push    ax       
 seg004:342F	sub     ax, ax       
 seg004:3431	push    ax       
-seg004:3432	call    far ptr EGA_DrawRect       
+seg004:3432	call    far ptr FillRectWithColor       
 seg004:3437	add     sp, 8       
 seg004:343A	mov     ax, ds:word_2C93E       
 seg004:343D	mov     cx, ax       
@@ -193,7 +193,7 @@ seg004:35AC	add     sp, 0Ch
 seg004:35AF	push    cs       
 seg004:35B0	call    near ptr DrawSparseBackgroundStripes       
 seg004:35B3	mov     ax, 1       
-seg004:35B6	mov     ds:word_2BEDA, ax       
+seg004:35B6	mov     ds:g_VideoSegmentTable, ax       
 seg004:35B9	push    ax       
 seg004:35BA	call    Video_SelectLayer       
 seg004:35BF	add     sp, 2       
@@ -231,7 +231,7 @@ seg004:3612	push    cs
 seg004:3613	call    near ptr Graphics_Render       
 seg004:3616	add     sp, 0Ch       
 seg004:3619	sub     ax, ax       
-seg004:361B	mov     ds:word_2BEDA, ax       
+seg004:361B	mov     ds:g_VideoSegmentTable, ax       
 seg004:361E	push    ax       
 seg004:361F	call    Video_SelectLayer       
 seg004:3624	add     sp, 2       

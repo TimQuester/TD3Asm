@@ -12,14 +12,14 @@
 ;;	call from seg009:4778 -> sub_1A9FC
 ;; Calls TO (outgoing xrefs): None
 ;; Data references:
-;;	data ref dseg:7ED4 -> word_2BF14
+;;	data ref dseg:7ED4 -> data_0002BF14
 ;; ----------------------------------------
 
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg009:47D1	mov     ax, ds:word_2BF14       
-seg009:47D4	mov     bl, byte ptr ds:word_2BF12       
+seg009:47D1	mov     ax, word ptr ds:g_RandomSeed+2       
+seg009:47D4	mov     bl, byte ptr ds:g_RandomSeed       
 seg009:47D8	shr     bl, 1       
 seg009:47DA	shr     bl, 1       
 seg009:47DC	sub     bh, bh       
@@ -27,8 +27,8 @@ seg009:47DE	and     bl, 7
 seg009:47E1	cmp     bx, si       
 seg009:47E3	jnb     short loc_1AB08       
 seg009:47E5	call    sub_1AB1C       
-seg009:47E8	mov     ax, ds:word_2BF12       
-seg009:47EB	mov     bl, byte ptr ds:word_2BF14       
+seg009:47E8	mov     ax, word ptr ds:g_RandomSeed       
+seg009:47EB	mov     bl, byte ptr ds:g_RandomSeed+2       
 seg009:47EF	sub     bh, bh       
 seg009:47F1	and     bl, 7       
 seg009:47F4	cmp     bx, si       

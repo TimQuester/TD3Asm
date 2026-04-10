@@ -21,7 +21,7 @@ seg004:4700	push    bp
 seg004:4701	mov     bp, sp       
 seg004:4703	sub     sp, 2       
 seg004:4706	mov     ax, 1       
-seg004:4709	mov     ds:word_2BEDA, ax       
+seg004:4709	mov     ds:g_VideoSegmentTable, ax       
 seg004:470C	push    ax       
 seg004:470D	call    Video_SelectLayer       
 seg004:4712	add     sp, 2       
@@ -37,7 +37,7 @@ seg004:4728	mov     ax, 13Fh
 seg004:472B	push    ax       
 seg004:472C	sub     ax, ax       
 seg004:472E	push    ax       
-seg004:472F	call    far ptr EGA_DrawRect       
+seg004:472F	call    far ptr FillRectWithColor       
 seg004:4734	add     sp, 8       
 seg004:4737	mov     ax, 7       
 seg004:473A	push    ax       
@@ -51,7 +51,7 @@ seg004:474B	mov     ax, 13Fh
 seg004:474E	push    ax       
 seg004:474F	sub     ax, ax       
 seg004:4751	push    ax       
-seg004:4752	call    far ptr EGA_DrawRect       
+seg004:4752	call    far ptr FillRectWithColor       
 seg004:4757	add     sp, 8       
 seg004:475A	mov     ax, 0Fh       
 seg004:475D	push    ax       

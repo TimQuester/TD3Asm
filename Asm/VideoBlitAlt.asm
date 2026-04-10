@@ -23,7 +23,7 @@ seg008:1306	push    di
 seg008:1307	push    si       
 seg008:1308	push    es       
 seg008:1309	sub     si, si       
-seg008:130B	mov     bx, ds:word_2BEDA       
+seg008:130B	mov     bx, ds:g_VideoSegmentTable       
 seg008:130F	shl     bx, 1       
 seg008:1311	mov     es, word ptr [bx-6F34h]       
 seg008:1315	mov     cx, [bp+src_y]       

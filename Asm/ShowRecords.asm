@@ -26,7 +26,7 @@ seg004:4951	sub     al, al
 seg004:4953	mov     ds:byte_2BEDF, al       
 seg004:4956	mov     ds:byte_2BECC, al       
 seg004:4959	mov     ax, 1       
-seg004:495C	mov     ds:word_2BEDA, ax       
+seg004:495C	mov     ds:g_VideoSegmentTable, ax       
 seg004:495F	push    ax       
 seg004:4960	call    Video_SelectLayer       
 seg004:4965	add     sp, 2       
@@ -378,7 +378,7 @@ seg004:4CAD	push    cs
 seg004:4CAE	call    near ptr sub_EEBE       
 seg004:4CB1	add     sp, 8       
 seg004:4CB4	sub     ax, ax       
-seg004:4CB6	mov     ds:word_2BEDA, ax       
+seg004:4CB6	mov     ds:g_VideoSegmentTable, ax       
 seg004:4CB9	push    ax       
 seg004:4CBA	call    Video_SelectLayer       
 seg004:4CBF	add     sp, 2       

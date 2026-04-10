@@ -142,7 +142,7 @@ seg005:1D9A	push    ax
 seg005:1D9B	call    BlitImageWithBanking       
 seg005:1DA0	add     sp, 10h       
 seg005:1DA3	mov     ax, 1       
-seg005:1DA6	mov     ds:word_2BEDA, ax       
+seg005:1DA6	mov     ds:g_VideoSegmentTable, ax       
 seg005:1DA9	push    ax       
 seg005:1DAA	call    Video_SelectLayer       
 seg005:1DAF	add     sp, 2       

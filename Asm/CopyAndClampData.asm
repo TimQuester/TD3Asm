@@ -20,7 +20,7 @@ seg008:0B88	push    ds
 seg008:0B89	push    es       
 seg008:0B8A	push    di       
 seg008:0B8B	push    si       
-seg008:0B8C	mov     bx, ds:word_2BEDA       
+seg008:0B8C	mov     bx, ds:g_VideoSegmentTable       
 seg008:0B90	shl     bx, 1       
 seg008:0B92	mov     ax, [bx-6F34h]       
 seg008:0B96	mov     es, ax       

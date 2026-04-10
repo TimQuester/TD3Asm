@@ -8,7 +8,7 @@
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg039:06D6 -> sub_21CC0
+;;	call from seg039:06D6 -> _dos_alloc
 ;;	call from seg039:1344 -> __amallocbrk
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None

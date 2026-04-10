@@ -8,7 +8,7 @@
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg009:03B9 -> unknown
+;;	call from seg009:03B9 -> sub_166CB
 ;;	call from seg009:24AE -> sub_18785
 ;; Calls TO (outgoing xrefs): None
 ;; Data references:

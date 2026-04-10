@@ -141,7 +141,7 @@ seg005:0149	jz      short loc_FCAB
 seg005:014B	cmp     byte ptr ds:0BD3Ch, 1       
 seg005:0150	jnz     short loc_FCAB       
 seg005:0152	mov     ax, 1       
-seg005:0155	mov     ds:word_2BEDA, ax       
+seg005:0155	mov     ds:g_VideoSegmentTable, ax       
 seg005:0158	push    ax       
 seg005:0159	call    Video_SelectLayer       
 seg005:015E	add     sp, 2       
@@ -151,7 +151,7 @@ seg005:0165	push    cs
 seg005:0166	call    near ptr sub_11786       
 seg005:0169	add     sp, 2       
 seg005:016C	sub     ax, ax       
-seg005:016E	mov     ds:word_2BEDA, ax       
+seg005:016E	mov     ds:g_VideoSegmentTable, ax       
 seg005:0171	push    ax       
 seg005:0172	call    Video_SelectLayer       
 seg005:0177	add     sp, 2       
@@ -201,7 +201,7 @@ seg005:01F6	mov     byte ptr ds:0B707h, 1
 seg005:01FB	mov     ds:word_2BECA, 1       
 seg005:0201	jmp     loc_FED4       
 seg005:0204	sub     ax, ax       
-seg005:0206	mov     ds:word_2BEDA, ax       
+seg005:0206	mov     ds:g_VideoSegmentTable, ax       
 seg005:0209	push    ax       
 seg005:020A	call    Video_SelectLayer       
 seg005:020F	add     sp, 2       
@@ -348,7 +348,7 @@ seg005:03CB	call    Sound_ProcessEvent
 seg005:03D0	add     sp, 2       
 seg005:03D3	call    FadeToBlackPalette       
 seg005:03D8	sub     ax, ax       
-seg005:03DA	mov     ds:word_2BEDA, ax       
+seg005:03DA	mov     ds:g_VideoSegmentTable, ax       
 seg005:03DD	push    ax       
 seg005:03DE	call    Video_SelectLayer       
 seg005:03E3	add     sp, 2       
@@ -364,7 +364,7 @@ seg005:03F8	mov     ax, 13Fh
 seg005:03FB	push    ax       
 seg005:03FC	sub     ax, ax       
 seg005:03FE	push    ax       
-seg005:03FF	call    far ptr EGA_DrawRect       
+seg005:03FF	call    far ptr FillRectWithColor       
 seg005:0404	mov     sp, bp       
 seg005:0406	pop     bp       
 seg005:0407	retf       

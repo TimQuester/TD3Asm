@@ -17,7 +17,7 @@
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
 seg005:19BE	mov     ax, 1       
-seg005:19C1	mov     ds:word_2BEDA, ax       
+seg005:19C1	mov     ds:g_VideoSegmentTable, ax       
 seg005:19C4	push    ax       
 seg005:19C5	call    Video_SelectLayer       
 seg005:19CA	add     sp, 2       
@@ -80,7 +80,7 @@ seg005:1A4C	add     sp, 10h
 seg005:1A4F	push    cs       
 seg005:1A50	call    near ptr sub_11592       
 seg005:1A53	sub     ax, ax       
-seg005:1A55	mov     ds:word_2BEDA, ax       
+seg005:1A55	mov     ds:g_VideoSegmentTable, ax       
 seg005:1A58	push    ax       
 seg005:1A59	call    Video_SelectLayer       
 seg005:1A5E	add     sp, 2       

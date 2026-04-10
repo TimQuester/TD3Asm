@@ -30,7 +30,7 @@ seg009:0505	mov     ax, 12Fh
 seg009:0508	push    ax       
 seg009:0509	mov     ax, 38h 	; '8'       
 seg009:050C	push    ax       
-seg009:050D	call    far ptr EGA_DrawRect	; EGA_DrawRect(179, 132, 56, 303)       
+seg009:050D	call    far ptr FillRectWithColor	; EGA_DrawRect(179, 132, 56, 303)       
 seg009:0512	add     sp, 8       
 seg009:0515	pop     dx       
 seg009:0516	mov     ax, 0C3h 	; 'Г'       
@@ -44,7 +44,7 @@ seg009:0523	mov     ax, 12Fh
 seg009:0526	push    ax       
 seg009:0527	mov     ax, 38h 	; '8'       
 seg009:052A	push    ax       
-seg009:052B	call    far ptr EGA_DrawRect	; EGA_DrawRect(195, 180, 199, 56)       
+seg009:052B	call    far ptr FillRectWithColor	; EGA_DrawRect(195, 180, 199, 56)       
 seg009:0530	add     sp, 8       
 seg009:0533	retf       
 

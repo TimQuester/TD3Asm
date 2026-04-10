@@ -78,7 +78,7 @@ seg009:5066	jb      short loc_1B3A7
 seg009:5068	sub     cx, cx       
 seg009:506A	mov     ch, bl       
 seg009:506C	shl     ch, 1       
-seg009:506E	add     cx, ds:word_2BF12       
+seg009:506E	add     cx, word ptr ds:g_RandomSeed       
 seg009:5072	and     cx, 5D9h       
 seg009:5076	jnz     short loc_1B3A7       
 seg009:5078	mov     byte ptr ds:0BAA6h, 2       

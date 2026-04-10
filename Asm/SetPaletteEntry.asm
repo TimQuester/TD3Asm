@@ -1,7 +1,7 @@
 ;================================================================================
-;; Function: sub_1F760
-;; Address: seg027:019B
-;; Size: 222 bytes (0xDE)
+;; Function: SetPaletteEntry
+;; Address: seg027:01C5
+;; Size: 180 bytes (0xB4)
 ;; Flags: FAR
 ;; Segment: seg027
 ;================================================================================
@@ -15,31 +15,14 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg027:019B	pushf       
-seg027:019C	add     [si-63FFh], bx       
-seg027:01A0	add     [si+3A01h], bx       
-seg027:01A4	add     [bp+si], bh       
-seg027:01A6	add     [bp+0], bl       
-seg027:01A9	pushf       
-seg027:01AA	add     [si-7DFFh], bx       
-seg027:01AE	add     [si-51FFh], bl       
-seg027:01B2	add     ch, bl       
-seg027:01B4	add     [bx+di], bh       
-seg027:01B6	add     [bx+di], di       
-seg027:01B8	add     [bx+di], di       
-seg027:01BA	add     [bx+di], di       
-seg027:01BC	add     [bx+di], di       
-seg027:01BE	add     [bx+di], di       
-seg027:01C0	add     [bx+di+1], sp       
-seg027:01C3	jbe     short loc_1F78B       
 seg027:01C5	push    bp       
 seg027:01C6	mov     bp, sp       
 seg027:01C8	push    si       
 seg027:01C9	push    di       
-seg027:01CA	mov     bx, [bp+6]       
-seg027:01CD	mov     dx, [bp+8]       
-seg027:01D0	mov     ax, [bp+0Ah]       
-seg027:01D3	mov     cx, [bp+0Ch]       
+seg027:01CA	mov     bx, [bp+reg]       
+seg027:01CD	mov     dx, [bp+r_flags]       
+seg027:01D0	mov     ax, [bp+g_flags]       
+seg027:01D3	mov     cx, [bp+b_flags]       
 seg027:01D6	lea     si, word_240FE       
 seg027:01DA	add     si, ds:0BD44h       
 seg027:01DE	jmp     word ptr cs:[si]       
@@ -117,5 +100,5 @@ seg027:0277	pop     bp
 seg027:0278	retf       
 
 ;================================================================================
-;; End of function sub_1F760
+;; End of function SetPaletteEntry
 ;================================================================================

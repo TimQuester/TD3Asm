@@ -36,7 +36,7 @@ seg004:0AB1	sub     al, al
 seg004:0AB3	mov     ds:byte_2BEDF, al       
 seg004:0AB6	mov     ds:byte_2BECC, al       
 seg004:0AB9	mov     ax, 1       
-seg004:0ABC	mov     ds:word_2BEDA, ax       
+seg004:0ABC	mov     ds:g_VideoSegmentTable, ax       
 seg004:0ABF	push    ax       
 seg004:0AC0	call    Video_SelectLayer       
 seg004:0AC5	add     sp, 2       
@@ -52,7 +52,7 @@ seg004:0ADA	mov     ax, 13Fh
 seg004:0ADD	push    ax       
 seg004:0ADE	sub     ax, ax       
 seg004:0AE0	push    ax       
-seg004:0AE1	call    far ptr EGA_DrawRect       
+seg004:0AE1	call    far ptr FillRectWithColor       
 seg004:0AE6	add     sp, 8       
 seg004:0AE9	mov     ax, offset aBic	; ".BIC"       
 seg004:0AEC	push    ax       
@@ -184,7 +184,7 @@ seg004:0C31	mov     [bp+var_8], 15h
 seg004:0C36	push    cs       
 seg004:0C37	call    near ptr DrawSparseBackgroundStripes       
 seg004:0C3A	sub     ax, ax       
-seg004:0C3C	mov     ds:word_2BEDA, ax       
+seg004:0C3C	mov     ds:g_VideoSegmentTable, ax       
 seg004:0C3F	push    ax       
 seg004:0C40	call    Video_SelectLayer       
 seg004:0C45	add     sp, 2       

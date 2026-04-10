@@ -1,5 +1,5 @@
 ;================================================================================
-;; Function: sub_21D2E
+;; Function: HeapSegmentAllocWrapper
 ;; Address: seg039:0726
 ;; Size: 23 bytes (0x17)
 ;; Flags: LIBRARY
@@ -29,5 +29,5 @@ seg039:073A	mov     ds, cx
 seg039:073C	retn       
 
 ;================================================================================
-;; End of function sub_21D2E
+;; End of function HeapSegmentAllocWrapper
 ;================================================================================

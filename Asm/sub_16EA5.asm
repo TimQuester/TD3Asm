@@ -39,13 +39,13 @@ seg009:0BB1	mov     ax, 3Eh 	; '>'
 seg009:0BB4	push    ax       
 seg009:0BB5	mov     ax, 35h 	; '5'       
 seg009:0BB8	push    ax       
-seg009:0BB9	call    far ptr EGA_DrawRect       
+seg009:0BB9	call    far ptr FillRectWithColor       
 seg009:0BBE	add     sp, 4       
 seg009:0BC1	mov     ax, 32h 	; '2'       
 seg009:0BC4	push    ax       
 seg009:0BC5	mov     ax, 29h 	; ')'       
 seg009:0BC8	push    ax       
-seg009:0BC9	call    far ptr EGA_DrawRect       
+seg009:0BC9	call    far ptr FillRectWithColor       
 seg009:0BCE	add     sp, 8       
 seg009:0BD1	mov     al, ds:0CEB7h       
 seg009:0BD4	sub     ah, ah       

@@ -42,7 +42,7 @@ seg004:3B5D	push    ax
 seg004:3B5E	call    LoadPalette       
 seg004:3B63	add     sp, 2       
 seg004:3B66	mov     ax, 1       
-seg004:3B69	mov     ds:word_2BEDA, ax       
+seg004:3B69	mov     ds:g_VideoSegmentTable, ax       
 seg004:3B6C	push    ax       
 seg004:3B6D	call    Video_SelectLayer       
 seg004:3B72	add     sp, 2       
@@ -129,7 +129,7 @@ seg004:3C2C	mov     ax, 13Fh
 seg004:3C2F	push    ax       
 seg004:3C30	sub     ax, ax       
 seg004:3C32	push    ax       
-seg004:3C33	call    far ptr EGA_DrawRect       
+seg004:3C33	call    far ptr FillRectWithColor       
 seg004:3C38	add     sp, 8       
 seg004:3C3B	mov     ax, 8       
 seg004:3C3E	push    ax       
@@ -143,7 +143,7 @@ seg004:3C4F	mov     ax, 13Eh
 seg004:3C52	push    ax       
 seg004:3C53	mov     ax, 1       
 seg004:3C56	push    ax       
-seg004:3C57	call    far ptr EGA_DrawRect       
+seg004:3C57	call    far ptr FillRectWithColor       
 seg004:3C5C	add     sp, 8       
 seg004:3C5F	mov     ax, 7       
 seg004:3C62	push    ax       
@@ -157,10 +157,10 @@ seg004:3C73	mov     ax, 13Dh
 seg004:3C76	push    ax       
 seg004:3C77	mov     ax, 2       
 seg004:3C7A	push    ax       
-seg004:3C7B	call    far ptr EGA_DrawRect       
+seg004:3C7B	call    far ptr FillRectWithColor       
 seg004:3C80	add     sp, 8       
 seg004:3C83	sub     ax, ax       
-seg004:3C85	mov     ds:word_2BEDA, ax       
+seg004:3C85	mov     ds:g_VideoSegmentTable, ax       
 seg004:3C88	push    ax       
 seg004:3C89	call    Video_SelectLayer       
 seg004:3C8E	add     sp, 2       
@@ -286,7 +286,7 @@ seg004:3DBB	cmp     [bp+var_6], 0
 seg004:3DBF	jnz     short loc_DF12       
 seg004:3DC1	jmp     loc_DE24       
 seg004:3DC4	sub     ax, ax       
-seg004:3DC6	mov     ds:word_2BEDA, ax       
+seg004:3DC6	mov     ds:g_VideoSegmentTable, ax       
 seg004:3DC9	push    ax       
 seg004:3DCA	call    Video_SelectLayer       
 seg004:3DCF	add     sp, 2       

@@ -1,5 +1,5 @@
 ;================================================================================
-;; Function: EGA_DrawRect
+;; Function: FillRectWithColor
 ;; Address: seg029:000B
 ;; Size: 867 bytes (0x363)
 ;; Flags: None
@@ -45,9 +45,9 @@
 ;;	call from seg005:09C6 -> sub_10442
 ;;	call from seg005:1745 -> sub_111E4
 ;;	call from seg005:1765 -> sub_111E4
-;;	call from seg009:0368 -> unknown
-;;	call from seg009:0378 -> unknown
-;;	call from seg009:0390 -> unknown
+;;	call from seg009:0368 -> sub_1663C
+;;	call from seg009:0378 -> sub_1663C
+;;	call from seg009:0390 -> sub_1663C
 ;;	call from seg009:050D -> DrawRectangles
 ;;	call from seg009:052B -> DrawRectangles
 ;;	call from seg009:0BB9 -> sub_16EA5
@@ -453,5 +453,5 @@ seg029:036C	pop     di
 seg029:036D	pop     bp       
 
 ;================================================================================
-;; End of function EGA_DrawRect
+;; End of function FillRectWithColor
 ;================================================================================

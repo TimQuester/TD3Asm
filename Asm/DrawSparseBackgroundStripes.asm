@@ -29,7 +29,7 @@ seg004:1BD4	push    bp
 seg004:1BD5	mov     bp, sp       
 seg004:1BD7	sub     sp, 2       
 seg004:1BDA	sub     ax, ax       
-seg004:1BDC	mov     ds:word_2BEDA, ax       
+seg004:1BDC	mov     ds:g_VideoSegmentTable, ax       
 seg004:1BDF	push    ax       
 seg004:1BE0	call    Video_SelectLayer       
 seg004:1BE5	add     sp, 2       

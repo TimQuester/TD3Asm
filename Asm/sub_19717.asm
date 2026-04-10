@@ -76,9 +76,9 @@ seg009:349C	mov     word ptr [bx-658Dh], 0
 seg009:34A2	mov     ds:9488h, cx       
 seg009:34A6	jmp     short loc_19794       
 seg009:34A8	mov     word ptr [bx-658Dh], 0       
-seg009:34AE	mov     ax, ds:word_2BF12       
+seg009:34AE	mov     ax, word ptr ds:g_RandomSeed       
 seg009:34B1	sub     dl, dl       
-seg009:34B3	test    byte ptr ds:word_2BF14, 8       
+seg009:34B3	test    byte ptr ds:g_RandomSeed+2, 8       
 seg009:34B8	jz      short loc_197DC       
 seg009:34BA	mov     dl, 0C0h 	; 'А'       
 seg009:34BC	push    si       

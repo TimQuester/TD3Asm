@@ -20,7 +20,7 @@
 ;;------------------------------------------------------------
 seg008:1E86	cmp     byte ptr ds:0E338h, 9       
 seg008:1E8B	jz      short loc_1629F       
-seg008:1E8D	mov     bx, ds:word_2BEDA       
+seg008:1E8D	mov     bx, ds:g_VideoSegmentTable       
 seg008:1E91	shl     bx, 1       
 seg008:1E93	mov     es, word ptr [bx-6F34h]       
 seg008:1E97	mov     di, ds:90DAh       
@@ -55,7 +55,7 @@ seg008:1EE5	mov     ds:9456h, al
 seg008:1EE8	inc     byte ptr ds:946Ah       
 seg008:1EEC	test    byte ptr ds:946Ah, 1       
 seg008:1EF1	jnz     short locret_162F1       
-seg008:1EF3	mov     bx, ds:word_2BEDA       
+seg008:1EF3	mov     bx, ds:g_VideoSegmentTable       
 seg008:1EF7	shl     bx, 1       
 seg008:1EF9	mov     es, word ptr [bx-6F34h]       
 seg008:1EFD	shl     ah, 1       

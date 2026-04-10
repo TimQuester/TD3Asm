@@ -53,7 +53,7 @@ seg008:123C	shr     dx, 1
 seg008:123E	shr     dx, 1       
 seg008:1240	shr     dx, 1       
 seg008:1242	sub     dx, bx       
-seg008:1244	mov     bx, ds:word_2BEDA       
+seg008:1244	mov     bx, ds:g_VideoSegmentTable       
 seg008:1248	shl     bx, 1       
 seg008:124A	mov     ds, word ptr [bx-6F34h]       
 seg008:124E	mov     bx, cx       
@@ -101,7 +101,7 @@ seg008:1295	mov     si, ax
 seg008:1297	mov     dx, [bp+y]       
 seg008:129A	sub     dx, [bp+x]       
 seg008:129D	inc     dx       
-seg008:129E	mov     bx, ds:word_2BEDA       
+seg008:129E	mov     bx, ds:g_VideoSegmentTable       
 seg008:12A2	shl     bx, 1       
 seg008:12A4	mov     ds, word ptr [bx-6F34h]       
 seg008:12A8	mov     bx, cx       
@@ -132,7 +132,7 @@ seg008:12D5	shr     dx, 1
 seg008:12D7	shr     dx, 1       
 seg008:12D9	shr     ax, 1       
 seg008:12DB	sub     dx, ax       
-seg008:12DD	mov     bx, ds:word_2BEDA       
+seg008:12DD	mov     bx, ds:g_VideoSegmentTable       
 seg008:12E1	shl     bx, 1       
 seg008:12E3	mov     ds, word ptr [bx-6F34h]       
 seg008:12E7	mov     bx, cx       

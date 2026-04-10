@@ -12,13 +12,13 @@
 ;;	call from seg009:46B0 -> sub_1A951
 ;; Calls TO (outgoing xrefs): None
 ;; Data references:
-;;	data ref dseg:7ED2 -> word_2BF12
+;;	data ref dseg:7ED2 -> g_RandomSeed
 ;; ----------------------------------------
 
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg009:0EDB	mov     ax, ds:word_2BF12       
+seg009:0EDB	mov     ax, word ptr ds:g_RandomSeed       
 seg009:0EDE	shr     ax, 1       
 seg009:0EE0	shr     ax, 1       
 seg009:0EE2	test    ah, 65h       

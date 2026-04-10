@@ -615,7 +615,7 @@ seg003:065E	push    ax
 seg003:065F	call    PlayStateMusic       
 seg003:0664	add     sp, 2       
 seg003:0667	sub     ax, ax       
-seg003:0669	mov     ds:word_2BEDA, ax       
+seg003:0669	mov     ds:g_VideoSegmentTable, ax       
 seg003:066C	push    ax       
 seg003:066D	call    Video_SelectLayer       
 seg003:0672	add     sp, 2       
@@ -631,7 +631,7 @@ seg003:0687	mov     ax, 13Fh
 seg003:068A	push    ax       
 seg003:068B	sub     ax, ax       
 seg003:068D	push    ax       
-seg003:068E	call    far ptr EGA_DrawRect       
+seg003:068E	call    far ptr FillRectWithColor       
 seg003:0693	add     sp, 8       
 seg003:0696	call    RestorePalette       
 seg003:069B	cmp     ds:isFirstRaceRun, 0       

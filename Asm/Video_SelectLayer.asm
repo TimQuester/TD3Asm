@@ -78,8 +78,8 @@
 ;;	call from seg005:1C1B -> sub_11720
 ;;	call from seg005:1DAA -> sub_11786
 ;;	call from seg009:008A -> sub_163A4
-;;	call from seg009:0346 -> unknown
-;;	call from seg009:039C -> unknown
+;;	call from seg009:0346 -> sub_1663C
+;;	call from seg009:039C -> sub_1663C
 ;;	call from seg009:77C2 -> sub_1DA0C
 ;;	call from seg009:77E0 -> sub_1DAF5
 ;;	call from seg009:789A -> sub_1DAF5

@@ -87,7 +87,7 @@ seg009:77B3	jns     short loc_1DAD7
 seg009:77B5	neg     bx       
 seg009:77B7	mov     ds:95B7h, bx       
 seg009:77BB	mov     ax, 1       
-seg009:77BE	mov     ds:word_2BEDA, ax       
+seg009:77BE	mov     ds:g_VideoSegmentTable, ax       
 seg009:77C1	push    ax       
 seg009:77C2	call    Video_SelectLayer       
 seg009:77C7	add     sp, 2       

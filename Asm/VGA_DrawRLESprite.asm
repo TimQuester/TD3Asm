@@ -29,7 +29,7 @@ seg008:0C52	shr     ax, 1
 seg008:0C54	shr     ax, 1       
 seg008:0C56	add     di, ax       
 seg008:0C58	add     di, [bp+dst_y]       
-seg008:0C5B	mov     bx, ds:word_2BEDA       
+seg008:0C5B	mov     bx, ds:g_VideoSegmentTable       
 seg008:0C5F	shl     bx, 1       
 seg008:0C61	mov     ax, [bx-6F34h]       
 seg008:0C65	mov     es, ax       

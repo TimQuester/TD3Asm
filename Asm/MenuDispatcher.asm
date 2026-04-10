@@ -36,8 +36,8 @@
 ;;	call from seg009:0124 -> sub_163A4
 ;;	call from seg009:0140 -> sub_163A4
 ;;	call from seg009:014D -> sub_163A4
-;;	call from seg009:032F -> unknown
-;;	call from seg009:03C5 -> unknown
+;;	call from seg009:032F -> sub_1663C
+;;	call from seg009:03C5 -> sub_166CB
 ;;	call from seg009:0499 -> sub_1676E
 ;;	call from seg009:054F -> CheckGameState
 ;;	call from seg009:0593 -> CheckFlags
@@ -71,7 +71,7 @@ seg003:17C3	sub     ax, ax
 seg003:17C5	push    ax       
 seg003:17C6	call    Sound_ProcessEvent       
 seg003:17CB	add     sp, 2       
-seg003:17CE	mov     ax, ds:word_2BEDA       
+seg003:17CE	mov     ax, ds:g_VideoSegmentTable       
 seg003:17D1	mov     [bp+var_12], ax       
 seg003:17D4	mov     ax, ds:90E1h       
 seg003:17D7	mov     [bp+var_16], ax       
@@ -96,7 +96,7 @@ seg003:1807	shl     ax, cl
 seg003:1809	sub     ax, 28h 	; '('       
 seg003:180C	mov     [bp+var_6], ax       
 seg003:180F	sub     ax, ax       
-seg003:1811	mov     ds:word_2BEDA, ax       
+seg003:1811	mov     ds:g_VideoSegmentTable, ax       
 seg003:1814	push    ax       
 seg003:1815	call    Video_SelectLayer       
 seg003:181A	add     sp, 2       
@@ -123,7 +123,7 @@ seg003:1850	mov     ax, 13Fh
 seg003:1853	sub     ax, [bp+var_6]       
 seg003:1856	push    ax       
 seg003:1857	push    [bp+var_6]       
-seg003:185A	call    far ptr EGA_DrawRect       
+seg003:185A	call    far ptr FillRectWithColor       
 seg003:185F	add     sp, 8       
 seg003:1862	sub     ax, ax       
 seg003:1864	push    ax       
@@ -228,7 +228,7 @@ seg003:196F	shl     ax, 1
 seg003:1971	add     ax, cx       
 seg003:1973	shl     ax, 1       
 seg003:1975	add     ax, cx       
-seg003:1977	mov     cx, ds:word_2BF14       
+seg003:1977	mov     cx, word ptr ds:g_RandomSeed+2       
 seg003:197B	and     cx, 7       
 seg003:197E	sub     ax, cx       
 seg003:1980	mov     [bp+var_8], ax       
@@ -479,7 +479,7 @@ seg003:1C44	push    di
 seg003:1C45	lea     ax, [si+1]       
 seg003:1C48	push    ax       
 seg003:1C49	push    si       
-seg003:1C4A	call    far ptr EGA_DrawRect       
+seg003:1C4A	call    far ptr FillRectWithColor       
 seg003:1C4F	add     sp, 8       
 seg003:1C52	sub     ax, ax       
 seg003:1C54	push    ax       
@@ -509,7 +509,7 @@ seg003:1C8D	push    di
 seg003:1C8E	lea     ax, [si+1]       
 seg003:1C91	push    ax       
 seg003:1C92	push    si       
-seg003:1C93	call    far ptr EGA_DrawRect       
+seg003:1C93	call    far ptr FillRectWithColor       
 seg003:1C98	add     sp, 8       
 seg003:1C9B	jmp     loc_9DD3       
 seg003:1C9E	mov     ax, 2       
@@ -654,7 +654,7 @@ seg003:1E07	add     sp, 8
 seg003:1E0A	mov     al, byte ptr ds:word_2BEE0       
 seg003:1E0D	mov     ds:0B708h, al       
 seg003:1E10	mov     ax, [bp+var_12]       
-seg003:1E13	mov     ds:word_2BEDA, ax       
+seg003:1E13	mov     ds:g_VideoSegmentTable, ax       
 seg003:1E16	push    ax       
 seg003:1E17	call    Video_SelectLayer       
 seg003:1E1C	add     sp, 2       

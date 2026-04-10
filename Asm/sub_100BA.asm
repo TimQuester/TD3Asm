@@ -39,7 +39,7 @@ seg005:05B4	push    ax
 seg005:05B5	call    BlitImageWithBanking       
 seg005:05BA	add     sp, 10h       
 seg005:05BD	sub     ax, ax       
-seg005:05BF	mov     ds:word_2BEDA, ax       
+seg005:05BF	mov     ds:g_VideoSegmentTable, ax       
 seg005:05C2	push    ax       
 seg005:05C3	call    Video_SelectLayer       
 seg005:05C8	add     sp, 2       
@@ -55,7 +55,7 @@ seg005:05DD	mov     ax, 13Fh
 seg005:05E0	push    ax       
 seg005:05E1	sub     ax, ax       
 seg005:05E3	push    ax       
-seg005:05E4	call    far ptr EGA_DrawRect       
+seg005:05E4	call    far ptr FillRectWithColor       
 seg005:05E9	add     sp, 8       
 seg005:05EC	push    cs       
 seg005:05ED	call    near ptr sub_10122       

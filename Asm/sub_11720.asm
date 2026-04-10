@@ -28,7 +28,7 @@ seg005:1C0C	push    ax
 seg005:1C0D	call    Sound_ProcessEvent       
 seg005:1C12	add     sp, 2       
 seg005:1C15	sub     ax, ax       
-seg005:1C17	mov     ds:word_2BEDA, ax       
+seg005:1C17	mov     ds:g_VideoSegmentTable, ax       
 seg005:1C1A	push    ax       
 seg005:1C1B	call    Video_SelectLayer       
 seg005:1C20	add     sp, 2       

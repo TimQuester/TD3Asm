@@ -59,7 +59,7 @@ seg004:1F3E	sub     ah, ah
 seg004:1F40	mov     ds:0CE96h, ax       
 seg004:1F43	mov     ds:byte_2BECC, al       
 seg004:1F46	mov     ax, 1       
-seg004:1F49	mov     ds:word_2BEDA, ax       
+seg004:1F49	mov     ds:g_VideoSegmentTable, ax       
 seg004:1F4C	push    ax       
 seg004:1F4D	call    Video_SelectLayer       
 seg004:1F52	add     sp, 2       
@@ -143,7 +143,7 @@ seg004:2016	mov     ax, 13Fh
 seg004:2019	push    ax       
 seg004:201A	sub     ax, ax       
 seg004:201C	push    ax       
-seg004:201D	call    far ptr EGA_DrawRect       
+seg004:201D	call    far ptr FillRectWithColor       
 seg004:2022	add     sp, 8       
 seg004:2025	mov     ax, 8       
 seg004:2028	push    ax       
@@ -167,14 +167,14 @@ seg004:204D	push    ax
 seg004:204E	call    SetScreenOffsets       
 seg004:2053	add     sp, 4       
 seg004:2056	sub     ax, ax       
-seg004:2058	mov     ds:word_2BEDA, ax       
+seg004:2058	mov     ds:g_VideoSegmentTable, ax       
 seg004:205B	push    ax       
 seg004:205C	call    Video_SelectLayer       
 seg004:2061	add     sp, 2       
 seg004:2064	push    cs       
 seg004:2065	call    near ptr DrawSparseBackgroundStripes       
 seg004:2068	mov     ax, 1       
-seg004:206B	mov     ds:word_2BEDA, ax       
+seg004:206B	mov     ds:g_VideoSegmentTable, ax       
 seg004:206E	push    ax       
 seg004:206F	call    Video_SelectLayer       
 seg004:2074	add     sp, 2       
@@ -258,7 +258,7 @@ seg004:213E	push    cs
 seg004:213F	call    near ptr Graphics_Render       
 seg004:2142	add     sp, 0Ch       
 seg004:2145	sub     ax, ax       
-seg004:2147	mov     ds:word_2BEDA, ax       
+seg004:2147	mov     ds:g_VideoSegmentTable, ax       
 seg004:214A	push    ax       
 seg004:214B	call    Video_SelectLayer       
 seg004:2150	add     sp, 2       
@@ -496,7 +496,7 @@ seg004:23B3	mov     ax, [bp-2]
 seg004:23B6	add     ax, 7       
 seg004:23B9	push    ax       
 seg004:23BA	push    word ptr [bp-2]       
-seg004:23BD	call    far ptr EGA_DrawRect       
+seg004:23BD	call    far ptr FillRectWithColor       
 seg004:23C2	add     sp, 8       
 seg004:23C5	inc     word ptr [bp-18h]       
 seg004:23C8	mov     ax, 2       
@@ -506,7 +506,7 @@ seg004:23D1	add     sp, 2
 seg004:23D4	call    RandomLCG       
 seg004:23D9	mov     [bp-2], ax       
 seg004:23DC	sub     ax, ax       
-seg004:23DE	mov     ds:word_2BEDA, ax       
+seg004:23DE	mov     ds:g_VideoSegmentTable, ax       
 seg004:23E1	push    ax       
 seg004:23E2	call    Video_SelectLayer       
 seg004:23E7	add     sp, 2       
@@ -539,7 +539,7 @@ seg004:242F	mov     ax, [bp-2]
 seg004:2432	add     ax, 7       
 seg004:2435	push    ax       
 seg004:2436	push    word ptr [bp-2]       
-seg004:2439	call    far ptr EGA_DrawRect       
+seg004:2439	call    far ptr FillRectWithColor       
 seg004:243E	add     sp, 8       
 seg004:2441	mov     word ptr [bp-18h], 0       
 seg004:2446	mov     word ptr [bp-12h], 1       
@@ -594,7 +594,7 @@ seg004:24CD	mov     ax, [bp-2]
 seg004:24D0	add     ax, 7       
 seg004:24D3	push    ax       
 seg004:24D4	push    word ptr [bp-2]       
-seg004:24D7	call    far ptr EGA_DrawRect       
+seg004:24D7	call    far ptr FillRectWithColor       
 seg004:24DC	add     sp, 8       
 seg004:24DF	mov     ax, [bp-0Ch]       
 seg004:24E2	add     ax, 1Fh       
@@ -635,7 +635,7 @@ seg004:253D	mov     ax, [bp-2]
 seg004:2540	add     ax, 7       
 seg004:2543	push    ax       
 seg004:2544	push    word ptr [bp-2]       
-seg004:2547	call    far ptr EGA_DrawRect       
+seg004:2547	call    far ptr FillRectWithColor       
 seg004:254C	add     sp, 8       
 seg004:254F	dec     word ptr [bp-0Ch]       
 seg004:2552	mov     bx, [bp-0Ch]       
@@ -655,7 +655,7 @@ seg004:2577	mov     ax, 13Eh
 seg004:257A	push    ax       
 seg004:257B	mov     ax, 1       
 seg004:257E	push    ax       
-seg004:257F	call    far ptr EGA_DrawRect       
+seg004:257F	call    far ptr FillRectWithColor       
 seg004:2584	add     sp, 8       
 seg004:2587	mov     ax, 0Bh       
 seg004:258A	push    ax       
@@ -678,7 +678,7 @@ seg004:25B0	mov     al, [bp-14h]
 seg004:25B3	inc     al       
 seg004:25B5	mov     ds:byte_2BEC9, al       
 seg004:25B8	sub     ax, ax       
-seg004:25BA	mov     ds:word_2BEDA, ax       
+seg004:25BA	mov     ds:g_VideoSegmentTable, ax       
 seg004:25BD	push    ax       
 seg004:25BE	call    Video_SelectLayer       
 seg004:25C3	add     sp, 2       

@@ -1,5 +1,5 @@
 ;================================================================================
-;; Function: draw_h_mirrored_sprite
+;; Function: prepare_h_mirrored_sprite
 ;; Address: seg008:15C6
 ;; Size: 305 bytes (0x131)
 ;; Flags: FAR
@@ -22,7 +22,7 @@ seg008:15C8	push    es
 seg008:15C9	push    ds       
 seg008:15CA	push    bp       
 seg008:15CB	sub     si, si       
-seg008:15CD	mov     bx, ds:word_2BEDA       
+seg008:15CD	mov     bx, ds:g_VideoSegmentTable       
 seg008:15D1	shl     bx, 1       
 seg008:15D3	mov     es, word ptr [bx-6F34h]       
 seg008:15D7	mov     bx, ds:0E338h       
@@ -168,5 +168,5 @@ seg008:16F5	pop     si
 seg008:16F6	retf       
 
 ;================================================================================
-;; End of function draw_h_mirrored_sprite
+;; End of function prepare_h_mirrored_sprite
 ;================================================================================

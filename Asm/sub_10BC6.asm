@@ -24,7 +24,7 @@ seg005:109F	cmp     ds:word_2BECA, 2
 seg005:10A4	jz      short loc_10BD8       
 seg005:10A6	mov     word ptr ds:0BD34h, 0FFFFh       
 seg005:10AC	sub     ax, ax       
-seg005:10AE	mov     ds:word_2BEDA, ax       
+seg005:10AE	mov     ds:g_VideoSegmentTable, ax       
 seg005:10B1	push    ax       
 seg005:10B2	call    Video_SelectLayer       
 seg005:10B7	add     sp, 2       

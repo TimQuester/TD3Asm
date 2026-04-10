@@ -29,7 +29,7 @@ seg009:46F5	mov     si, ds:0BC75h
 seg009:46F9	dec     si       
 seg009:46FA	jns     short loc_1AA6C       
 seg009:46FC	mov     byte ptr ds:95C8h, 0       
-seg009:4701	test    byte ptr ds:word_2BF12, 4       
+seg009:4701	test    byte ptr ds:g_RandomSeed, 4       
 seg009:4706	jnz     short locret_1AA3B       
 seg009:4708	mov     bl, ds:0BB34h       
 seg009:470C	inc     bl       
@@ -43,9 +43,9 @@ seg009:4721	jnz     short loc_1AA21
 seg009:4723	mov     es, word ptr ds:90D0h       
 seg009:4727	mov     word ptr ds:0BAD4h, 0       
 seg009:472D	mov     al, 0Fh       
-seg009:472F	mov     di, ds:word_2BF12       
+seg009:472F	mov     di, word ptr ds:g_RandomSeed       
 seg009:4733	call    sub_1AACA       
-seg009:4736	mov     di, ds:word_2BF14       
+seg009:4736	mov     di, word ptr ds:g_RandomSeed+2       
 seg009:473A	mov     si, ds:0BC77h       
 seg009:473E	dec     si       
 seg009:473F	call    sub_1AACA       
@@ -58,9 +58,9 @@ seg009:4751	jnz     short loc_1AA21
 seg009:4753	mov     es, word ptr ds:90D0h       
 seg009:4757	mov     word ptr ds:0BAD4h, 0       
 seg009:475D	mov     al, 7       
-seg009:475F	mov     di, ds:word_2BF12       
+seg009:475F	mov     di, word ptr ds:g_RandomSeed       
 seg009:4763	call    sub_1AA9C       
-seg009:4766	mov     di, ds:word_2BF14       
+seg009:4766	mov     di, word ptr ds:g_RandomSeed+2       
 seg009:476A	mov     si, ds:0BC75h       
 seg009:476E	dec     si       
 seg009:476F	call    sub_1AA9C       

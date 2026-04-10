@@ -38,14 +38,14 @@ seg039:0684	cmp     ax, 0FFF1h
 seg039:0687	jnb     short loc_21CAF       
 seg039:0689	cmp     word ptr ds:0C5B4h, 0       
 seg039:068E	jnz     short loc_21CA0       
-seg039:0690	call    sub_21CC0       
+seg039:0690	call    _dos_alloc       
 seg039:0693	jz      short loc_21CAF       
 seg039:0695	mov     ds:0C5B4h, ax       
-seg039:0698	call    sub_21D2E       
+seg039:0698	call    HeapSegmentAllocWrapper       
 seg039:069B	jnz     short loc_21CBA       
-seg039:069D	call    sub_21CC0       
+seg039:069D	call    _dos_alloc       
 seg039:06A0	jz      short loc_21CAF       
-seg039:06A2	call    sub_21D2E       
+seg039:06A2	call    HeapSegmentAllocWrapper       
 seg039:06A5	jnz     short loc_21CBA       
 seg039:06A7	push    [bp+arg_0]       
 seg039:06AA	call    unknown_libname_4	; MS Quick C v1.0/v2.01 & MSC v5.1 DOS run-time & graphic       

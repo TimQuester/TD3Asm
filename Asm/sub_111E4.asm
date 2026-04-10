@@ -53,7 +53,7 @@ seg005:170D	or      ax, ax
 seg005:170F	jnz     short loc_11240       
 seg005:1711	jmp     loc_113AE       
 seg005:1714	mov     ax, 1       
-seg005:1717	mov     ds:word_2BEDA, ax       
+seg005:1717	mov     ds:g_VideoSegmentTable, ax       
 seg005:171A	push    ax       
 seg005:171B	call    Video_SelectLayer       
 seg005:1720	add     sp, 2       
@@ -70,7 +70,7 @@ seg005:173B	mov     ax, [bp+var_A]
 seg005:173E	add     ax, 7       
 seg005:1741	push    ax       
 seg005:1742	push    [bp+var_A]       
-seg005:1745	call    far ptr EGA_DrawRect       
+seg005:1745	call    far ptr FillRectWithColor       
 seg005:174A	add     sp, 8       
 seg005:174D	push    [bp+var_C]       
 seg005:1750	mov     ax, [bp+var_C]       
@@ -82,7 +82,7 @@ seg005:175D	push    ax
 seg005:175E	mov     ax, [bp+var_A]       
 seg005:1761	add     ax, 0Ah       
 seg005:1764	push    ax       
-seg005:1765	call    far ptr EGA_DrawRect       
+seg005:1765	call    far ptr FillRectWithColor       
 seg005:176A	add     sp, 8       
 seg005:176D	mov     al, ds:0CEB2h       
 seg005:1770	sub     ah, ah       

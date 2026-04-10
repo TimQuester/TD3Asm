@@ -34,7 +34,7 @@ seg004:0F67	push    ax
 seg004:0F68	call    LoadPalette       
 seg004:0F6D	add     sp, 2       
 seg004:0F70	mov     ax, 1       
-seg004:0F73	mov     ds:word_2BEDA, ax       
+seg004:0F73	mov     ds:g_VideoSegmentTable, ax       
 seg004:0F76	push    ax       
 seg004:0F77	call    Video_SelectLayer       
 seg004:0F7C	add     sp, 2       

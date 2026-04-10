@@ -141,7 +141,7 @@ seg009:55B2	jb      short loc_1B8FC
 seg009:55B4	mov     al, 1       
 seg009:55B6	jz      short loc_1B8FC       
 seg009:55B8	inc     al       
-seg009:55BA	mov     ch, byte ptr ds:word_2BF14       
+seg009:55BA	mov     ch, byte ptr ds:g_RandomSeed+2       
 seg009:55BE	and     ch, 1       
 seg009:55C1	cmp     ah, 5       
 seg009:55C4	jb      short loc_1B8FC       
@@ -150,7 +150,7 @@ seg009:55C8	jz      short loc_1B8FC
 seg009:55CA	shl     al, 1       
 seg009:55CC	cmp     ah, 6       
 seg009:55CF	jz      short loc_1B8FC       
-seg009:55D1	mov     al, byte ptr ds:word_2BF14       
+seg009:55D1	mov     al, byte ptr ds:g_RandomSeed+2       
 seg009:55D4	and     al, 3       
 seg009:55D6	cmp     al, 3       
 seg009:55D8	jb      short loc_1B8FC       

@@ -23,7 +23,7 @@ seg005:05F7	mov     bp, sp
 seg005:05F9	sub     sp, 2       
 seg005:05FC	mov     byte ptr ds:90E0h, 1       
 seg005:0601	sub     ax, ax       
-seg005:0603	mov     ds:word_2BEDA, ax       
+seg005:0603	mov     ds:g_VideoSegmentTable, ax       
 seg005:0606	push    ax       
 seg005:0607	call    Video_SelectLayer       
 seg005:060C	add     sp, 2       
@@ -48,7 +48,7 @@ seg005:0642	mov     ax, 13Fh
 seg005:0645	push    ax       
 seg005:0646	sub     ax, ax       
 seg005:0648	push    ax       
-seg005:0649	call    far ptr EGA_DrawRect       
+seg005:0649	call    far ptr FillRectWithColor       
 seg005:064E	add     sp, 8       
 seg005:0651	mov     ax, 0Fh       
 seg005:0654	push    ax       
@@ -154,7 +154,7 @@ seg005:0755	mov     ax, 81h 	; 'Ѓ'
 seg005:0758	push    ax       
 seg005:0759	mov     ax, 38h 	; '8'       
 seg005:075C	push    ax       
-seg005:075D	call    far ptr EGA_DrawRect       
+seg005:075D	call    far ptr FillRectWithColor       
 seg005:0762	add     sp, 8       
 seg005:0765	jmp     short loc_102EE       
 seg005:0767	; data
@@ -170,7 +170,7 @@ seg005:077C	mov     ax, 12Bh
 seg005:077F	push    ax       
 seg005:0780	mov     ax, 82h 	; '‚'       
 seg005:0783	push    ax       
-seg005:0784	call    far ptr EGA_DrawRect       
+seg005:0784	call    far ptr FillRectWithColor       
 seg005:0789	add     sp, 8       
 seg005:078C	sub     ax, ax       
 seg005:078E	mov     [bp+var_2], ax       

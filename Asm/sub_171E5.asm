@@ -21,7 +21,7 @@ seg009:0EC5	cmp     ds:word_2C944, 3
 seg009:0ECA	jb      short locret_17250       
 seg009:0ECC	cmp     byte ptr ds:0BAADh, 0       
 seg009:0ED1	jnz     short locret_17250       
-seg009:0ED3	mov     ax, ds:word_2BF12       
+seg009:0ED3	mov     ax, word ptr ds:g_RandomSeed       
 seg009:0ED6	test    ah, 0F8h       
 seg009:0ED9	jz      short loc_17236       
 

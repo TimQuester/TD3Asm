@@ -30,7 +30,7 @@ seg004:145A	jnz     short loc_B5DD
 seg004:145C	push    cs       
 seg004:145D	call    near ptr FadeOutPalette       
 seg004:1460	sub     ax, ax       
-seg004:1462	mov     ds:word_2BEDA, ax       
+seg004:1462	mov     ds:g_VideoSegmentTable, ax       
 seg004:1465	push    ax       
 seg004:1466	call    Video_SelectLayer       
 seg004:146B	add     sp, 2       
@@ -46,7 +46,7 @@ seg004:1480	mov     ax, 13Fh
 seg004:1483	push    ax       
 seg004:1484	sub     ax, ax       
 seg004:1486	push    ax       
-seg004:1487	call    far ptr EGA_DrawRect       
+seg004:1487	call    far ptr FillRectWithColor       
 seg004:148C	add     sp, 8       
 seg004:148F	mov     byte ptr ds:90F0h, 80h 	; 'Ђ'       
 seg004:1494	mov     ax, offset aSelcolrBin	; "SELCOLR.BIN"       
@@ -87,7 +87,7 @@ seg004:14F6	mov     ds:byte_2BECC, 0
 seg004:14FB	mov     [bp+var_4], 1       
 seg004:1500	mov     [bp+var_2], 0FFh       
 seg004:1505	mov     ax, 1       
-seg004:1508	mov     ds:word_2BEDA, ax       
+seg004:1508	mov     ds:g_VideoSegmentTable, ax       
 seg004:150B	push    ax       
 seg004:150C	call    Video_SelectLayer       
 seg004:1511	add     sp, 2       
@@ -230,7 +230,7 @@ seg004:1663	push    ax
 seg004:1664	call    BlitImageWithBanking       
 seg004:1669	add     sp, 10h       
 seg004:166C	sub     ax, ax       
-seg004:166E	mov     ds:word_2BEDA, ax       
+seg004:166E	mov     ds:g_VideoSegmentTable, ax       
 seg004:1671	push    ax       
 seg004:1672	call    Video_SelectLayer       
 seg004:1677	add     sp, 2       
@@ -261,7 +261,7 @@ seg004:16D0	push    ax
 seg004:16D1	call    far ptr SetHardwareCursorPositio       
 seg004:16D6	add     sp, 4       
 seg004:16D9	sub     ax, ax       
-seg004:16DB	mov     ds:word_2BEDA, ax       
+seg004:16DB	mov     ds:g_VideoSegmentTable, ax       
 seg004:16DE	push    ax       
 seg004:16DF	call    Video_SelectLayer       
 seg004:16E4	add     sp, 2       
@@ -335,7 +335,7 @@ seg004:17A8	cmp     [bp+var_6], 0Dh
 seg004:17AC	jnz     short loc_B902       
 seg004:17AE	add     word ptr ds:0E5ACh, 80h 	; 'Ђ'       
 seg004:17B4	sub     ax, ax       
-seg004:17B6	mov     ds:word_2BEDA, ax       
+seg004:17B6	mov     ds:g_VideoSegmentTable, ax       
 seg004:17B9	push    ax       
 seg004:17BA	call    Video_SelectLayer       
 seg004:17BF	add     sp, 2       
@@ -369,7 +369,7 @@ seg004:180B	mov     ds:byte_2C804, 0
 seg004:1810	push    cs       
 seg004:1811	call    near ptr FadeOutPalette       
 seg004:1814	sub     ax, ax       
-seg004:1816	mov     ds:word_2BEDA, ax       
+seg004:1816	mov     ds:g_VideoSegmentTable, ax       
 seg004:1819	push    ax       
 seg004:181A	call    Video_SelectLayer       
 seg004:181F	add     sp, 2       
@@ -387,7 +387,7 @@ seg004:183B	mov     ax, 13Fh
 seg004:183E	push    ax       
 seg004:183F	sub     ax, ax       
 seg004:1841	push    ax       
-seg004:1842	call    far ptr EGA_DrawRect       
+seg004:1842	call    far ptr FillRectWithColor       
 seg004:1847	add     sp, 8       
 seg004:184A	push    cs       
 seg004:184B	call    near ptr RestorePalette       

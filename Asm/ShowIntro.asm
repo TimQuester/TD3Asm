@@ -62,7 +62,7 @@ seg004:00D7	push    word ptr ds:FileLz_Buffer
 seg004:00DB	call    LZW_Decompress       
 seg004:00E0	add     sp, 8       
 seg004:00E3	mov     ax, 1       
-seg004:00E6	mov     ds:word_2BEDA, ax       
+seg004:00E6	mov     ds:g_VideoSegmentTable, ax       
 seg004:00E9	push    ax       
 seg004:00EA	call    Video_SelectLayer       
 seg004:00EF	add     sp, 2       
@@ -152,7 +152,7 @@ seg004:01D4	push    ax
 seg004:01D5	call    DecodeImageData       
 seg004:01DA	add     sp, 6       
 seg004:01DD	mov     ds:word_2BEE0, 0       
-seg004:01E3	mov     [bp+var_6], 0       
+seg004:01E3	mov     [bp+RedRectangleX], 0       
 seg004:01E8	jmp     loc_A3D9       
 seg004:01EB	; data
 seg004:01EC	call    RandomLCG       
@@ -162,7 +162,7 @@ seg004:01F7	cmp     [bp+var_C], ax
 seg004:01FA	jz      short loc_A33A       
 seg004:01FC	mov     ax, offset aFOOFOOFO_FOO	; COMPASS.LZ       
 seg004:01FF	push    ax       
-seg004:0200	push    [bp+var_6]       
+seg004:0200	push    [bp+RedRectangleX]       
 seg004:0203	call    SaveGlobalValues       
 seg004:0208	add     sp, 4       
 seg004:020B	push    [bp+var_8]       
@@ -209,9 +209,9 @@ seg004:027B	mov     ax, 0E788h
 seg004:027E	push    ax       
 seg004:027F	call    DrawSpriteWithModes       
 seg004:0284	add     sp, 6       
-seg004:0287	add     [bp+var_6], 2       
-seg004:028B	cmp     [bp+var_6], 121h       
-seg004:0290	jge     short loc_A400       
+seg004:0287	add     [bp+RedRectangleX], 2       
+seg004:028B	cmp     [bp+RedRectangleX], 121h       
+seg004:0290	jge     short loc_A400	; Red rectangle near right border       
 seg004:0292	mov     ax, ds:word_2BEE0       
 seg004:0295	mov     [bp+var_C], ax       
 seg004:0298	lea     ax, [bp+var_A]       
@@ -223,7 +223,7 @@ seg004:02A9	jz      short loc_A3FC
 seg004:02AB	jmp     loc_A299       
 seg004:02AE	jmp     loc_A342       
 seg004:02B1	; data
-seg004:02B2	cmp     word ptr ds:VideoMode2, VIDEO_MODE_VGA_320x200_256       
+seg004:02B2	cmp     word ptr ds:VideoMode2, VIDEO_MODE_VGA_320x200_256	; Red rectangle near right border       
 seg004:02B7	jnz     short loc_A40C       
 seg004:02B9	mov     ax, 2Ch 	; ','       
 seg004:02BC	jmp     short loc_A40F       
@@ -247,7 +247,7 @@ seg004:02EB	push    ax
 seg004:02EC	call    LoadPalette       
 seg004:02F1	add     sp, 2       
 seg004:02F4	mov     ax, 1       
-seg004:02F7	mov     ds:word_2BEDA, ax       
+seg004:02F7	mov     ds:g_VideoSegmentTable, ax       
 seg004:02FA	push    ax       
 seg004:02FB	call    Video_SelectLayer       
 seg004:0300	add     sp, 2       
@@ -319,14 +319,14 @@ seg004:03A8	push    ax
 seg004:03A9	push    cs       
 seg004:03AA	call    near ptr Graphics_Render       
 seg004:03AD	add     sp, 0Ch       
-seg004:03B0	call    draw_h_mirrored_sprite       
+seg004:03B0	call    prepare_h_mirrored_sprite       
 seg004:03B5	push    cs       
 seg004:03B6	call    near ptr DrawSparseBackgroundStripes       
 seg004:03B9	cmp     ds:byte_2BECC, 0       
 seg004:03BE	jz      short loc_A511       
 seg004:03C0	jmp     loc_A299       
 seg004:03C3	mov     ax, 1       
-seg004:03C6	mov     ds:word_2BEDA, ax       
+seg004:03C6	mov     ds:g_VideoSegmentTable, ax       
 seg004:03C9	push    ax       
 seg004:03CA	call    Video_SelectLayer       
 seg004:03CF	add     sp, 2       
@@ -342,7 +342,7 @@ seg004:03EA	push    ax
 seg004:03EB	call    LoadPalette       
 seg004:03F0	add     sp, 2       
 seg004:03F3	mov     byte ptr ds:90F0h, 0       
-seg004:03F8	cmp     word ptr ds:VideoMode2, 13h       
+seg004:03F8	cmp     word ptr ds:VideoMode2, VIDEO_MODE_VGA_320x200_256       
 seg004:03FD	jnz     short loc_A5A3       
 seg004:03FF	mov     ax, offset aTitleaniLz	; "TITLEANI.LZ"       
 seg004:0402	push    ax       
@@ -745,7 +745,7 @@ seg004:07B0	push    word ptr ds:FileLz_Buffer+2
 seg004:07B4	push    word ptr ds:FileLz_Buffer       
 seg004:07B8	call    LZW_Decompress       
 seg004:07BD	add     sp, 8       
-seg004:07C0	cmp     word ptr ds:VideoMode2, 13h       
+seg004:07C0	cmp     word ptr ds:VideoMode2, VIDEO_MODE_VGA_320x200_256       
 seg004:07C5	jnz     short loc_A92A       
 seg004:07C7	mov     ax, 28h 	; '('       
 seg004:07CA	push    ax       
@@ -791,7 +791,7 @@ seg004:081E	add     sp, 10h
 seg004:0821	push    cs       
 seg004:0822	call    near ptr FadeOutPartialPalette       
 seg004:0825	sub     ax, ax       
-seg004:0827	mov     ds:word_2BEDA, ax       
+seg004:0827	mov     ds:g_VideoSegmentTable, ax       
 seg004:082A	push    ax       
 seg004:082B	call    Video_SelectLayer       
 seg004:0830	add     sp, 2       
@@ -817,7 +817,7 @@ seg004:0866	jnz     short loc_A9ED
 seg004:0868	push    cs       
 seg004:0869	call    near ptr FadeToBlackPalette       
 seg004:086C	sub     ax, ax       
-seg004:086E	mov     ds:word_2BEDA, ax       
+seg004:086E	mov     ds:g_VideoSegmentTable, ax       
 seg004:0871	push    ax       
 seg004:0872	call    Video_SelectLayer       
 seg004:0877	add     sp, 2       
@@ -833,13 +833,13 @@ seg004:088C	mov     ax, 13Fh
 seg004:088F	push    ax       
 seg004:0890	sub     ax, ax       
 seg004:0892	push    ax       
-seg004:0893	call    far ptr EGA_DrawRect       
+seg004:0893	call    far ptr FillRectWithColor	; FillRectWithColor(200, 320, 0)       
 seg004:0898	add     sp, 8       
 seg004:089B	push    cs       
 seg004:089C	call    near ptr RestorePalette       
 seg004:089F	mov     ds:byte_2BEDF, 0       
 seg004:08A4	mov     ax, 1       
-seg004:08A7	mov     ds:word_2BEDA, ax       
+seg004:08A7	mov     ds:g_VideoSegmentTable, ax       
 seg004:08AA	push    ax       
 seg004:08AB	call    Video_SelectLayer       
 seg004:08B0	add     sp, 2       
@@ -956,9 +956,9 @@ seg004:09D0	push    ax
 seg004:09D1	push    cs       
 seg004:09D2	call    near ptr Graphics_Render       
 seg004:09D5	add     sp, 0Ch       
-seg004:09D8	cmp     word ptr ds:0E338h, 13h       
+seg004:09D8	cmp     word ptr ds:0E338h, VIDEO_MODE_VGA_320x200_256       
 seg004:09DD	jnz     short loc_AB32       
-seg004:09DF	mov     ax, 13h       
+seg004:09DF	mov     ax, VIDEO_MODE_VGA_320x200_256       
 seg004:09E2	jmp     short loc_AB34       
 seg004:09E4	sub     ax, ax       
 seg004:09E6	push    ax       
@@ -972,7 +972,7 @@ seg004:09F6	mov     ax, 13Fh
 seg004:09F9	push    ax       
 seg004:09FA	sub     ax, ax       
 seg004:09FC	push    ax       
-seg004:09FD	call    far ptr EGA_DrawRect       
+seg004:09FD	call    far ptr FillRectWithColor       
 seg004:0A02	add     sp, 8       
 seg004:0A05	mov     ax, 8       
 seg004:0A08	push    ax       
@@ -986,7 +986,7 @@ seg004:0A19	mov     ax, 13Eh
 seg004:0A1C	push    ax       
 seg004:0A1D	mov     ax, 1       
 seg004:0A20	push    ax       
-seg004:0A21	call    far ptr EGA_DrawRect       
+seg004:0A21	call    far ptr FillRectWithColor       
 seg004:0A26	add     sp, 8       
 seg004:0A29	mov     ax, 7       
 seg004:0A2C	push    ax       
@@ -1000,15 +1000,15 @@ seg004:0A3D	mov     ax, 13Dh
 seg004:0A40	push    ax       
 seg004:0A41	mov     ax, 2       
 seg004:0A44	push    ax       
-seg004:0A45	call    far ptr EGA_DrawRect       
+seg004:0A45	call    far ptr FillRectWithColor       
 seg004:0A4A	add     sp, 8       
 seg004:0A4D	sub     ax, ax       
-seg004:0A4F	mov     ds:word_2BEDA, ax       
+seg004:0A4F	mov     ds:g_VideoSegmentTable, ax       
 seg004:0A52	push    ax       
 seg004:0A53	call    Video_SelectLayer       
 seg004:0A58	add     sp, 2       
 seg004:0A5B	push    cs       
-seg004:0A5C	call    near ptr DrawSparseBackgroundStripes       
+seg004:0A5C	call    near ptr DrawSparseBackgroundStripes	; Draw first card photo       
 seg004:0A5F	cmp     ds:byte_2BECC, 0       
 seg004:0A64	jz      short loc_ABB7       
 seg004:0A66	jmp     loc_A299       

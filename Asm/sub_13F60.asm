@@ -196,12 +196,12 @@ seg007:13F7	mov     ds:0A1F3h, cx
 seg007:13FB	add     cx, 0Ch       
 seg007:13FE	mov     bx, 2       
 seg007:1401	call    SetupArrayValues       
-seg007:1404	mov     bx, ds:word_2BF12       
+seg007:1404	mov     bx, word ptr ds:g_RandomSeed       
 seg007:1408	shr     bx, 1       
 seg007:140A	and     bx, 7Fh       
 seg007:140D	sub     bx, 40h 	; '@'       
 seg007:1410	add     ax, bx       
-seg007:1412	mov     bx, ds:word_2BF12+1       
+seg007:1412	mov     bx, word ptr ds:g_RandomSeed+1       
 seg007:1416	and     bx, 7Fh       
 seg007:1419	sub     bx, 40h 	; '@'       
 seg007:141C	add     dx, bx       

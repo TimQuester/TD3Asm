@@ -21,7 +21,7 @@ seg005:18CE	push    bp
 seg005:18CF	mov     bp, sp       
 seg005:18D1	sub     sp, 4       
 seg005:18D4	sub     ax, ax       
-seg005:18D6	mov     ds:word_2BEDA, ax       
+seg005:18D6	mov     ds:g_VideoSegmentTable, ax       
 seg005:18D9	push    ax       
 seg005:18DA	call    Video_SelectLayer       
 seg005:18DF	add     sp, 2       

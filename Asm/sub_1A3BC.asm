@@ -9,7 +9,7 @@
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
 ;;	call from seg005:0D28 -> sub_1084E
-;;	call from seg009:0337 -> unknown
+;;	call from seg009:0337 -> sub_1663C
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None
 ;; ----------------------------------------

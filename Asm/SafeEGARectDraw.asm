@@ -46,7 +46,7 @@ seg037:004F	push    dx
 seg037:0050	push    cx       
 seg037:0051	push    bx       
 seg037:0052	push    ax       
-seg037:0053	call    far ptr EGA_DrawRect       
+seg037:0053	call    far ptr FillRectWithColor       
 seg037:0058	add     sp, 8       
 seg037:005B	xor     ax, ax       
 seg037:005D	pop     bp       

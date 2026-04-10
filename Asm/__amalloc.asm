@@ -8,7 +8,7 @@
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg039:0733 -> sub_21D2E
+;;	call from seg039:0733 -> HeapSegmentAllocWrapper
 ;;	call from seg039:11EB -> unknown_libname_4
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None

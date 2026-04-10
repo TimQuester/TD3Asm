@@ -605,7 +605,7 @@ seg004:46D1	call    near ptr DrawFormattedText
 seg004:46D4	add     sp, 4       
 seg004:46D7	mov     [bp+var_12], ax       
 seg004:46DA	sub     ax, ax       
-seg004:46DC	mov     ds:word_2BEDA, ax       
+seg004:46DC	mov     ds:g_VideoSegmentTable, ax       
 seg004:46DF	push    ax       
 seg004:46E0	call    Video_SelectLayer       
 seg004:46E5	add     sp, 2       

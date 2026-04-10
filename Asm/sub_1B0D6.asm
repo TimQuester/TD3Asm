@@ -43,7 +43,7 @@ seg009:4DF0	ja      short loc_1B15F
 seg009:4DF2	jmp     loc_1B1CE       
 seg009:4DF5	retn       
 seg009:4DF6	mov     ax, 0F0Fh       
-seg009:4DF9	test    byte ptr ds:word_2BF12, 4       
+seg009:4DF9	test    byte ptr ds:g_RandomSeed, 4       
 seg009:4DFE	jnz     short loc_1B14F       
 seg009:4E00	sub     ax, ax       
 seg009:4E02	jmp     short loc_1B14F       

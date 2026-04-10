@@ -28,7 +28,7 @@ seg009:0E89	mov     ds:0B78Eh, al
 seg009:0E8C	jnz     short locret_171E4       
 seg009:0E8E	cmp     byte ptr ds:0B6D7h, 1       
 seg009:0E93	jz      short loc_171BD       
-seg009:0E95	mov     ax, ds:word_2BF14       
+seg009:0E95	mov     ax, word ptr ds:g_RandomSeed+2       
 seg009:0E98	test    ah, 3       
 seg009:0E9B	jnz     short loc_171CA       
 seg009:0E9D	mov     ax, 0Ah       

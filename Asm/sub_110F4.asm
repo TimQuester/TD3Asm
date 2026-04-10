@@ -30,7 +30,7 @@ seg005:15DD	cmp     ds:0E5AEh, al
 seg005:15E1	jnz     short loc_11112       
 seg005:15E3	jmp     loc_111E0       
 seg005:15E6	sub     ax, ax       
-seg005:15E8	mov     ds:word_2BEDA, ax       
+seg005:15E8	mov     ds:g_VideoSegmentTable, ax       
 seg005:15EB	push    ax       
 seg005:15EC	call    Video_SelectLayer       
 seg005:15F1	add     sp, 2       

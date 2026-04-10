@@ -22,7 +22,7 @@ seg004:19E9	sub     sp, 8
 seg004:19EC	push    si       
 seg004:19ED	mov     [bp+var_4], 0       
 seg004:19F2	sub     ax, ax       
-seg004:19F4	mov     ds:word_2BEDA, ax       
+seg004:19F4	mov     ds:g_VideoSegmentTable, ax       
 seg004:19F7	push    ax       
 seg004:19F8	call    Video_SelectLayer       
 seg004:19FD	add     sp, 2       
@@ -35,7 +35,7 @@ seg004:1A0D	add     sp, 4
 seg004:1A10	push    [bp+var_4]       
 seg004:1A13	push    [bp+arg_0]       
 seg004:1A16	push    cs       
-seg004:1A17	call    near ptr DrawFontSymbols       
+seg004:1A17	call    near ptr DrawFontSymbols	; Designed by Tom Loughry       
 seg004:1A1A	add     sp, 4       
 seg004:1A1D	mov     [bp+var_4], ax       
 seg004:1A20	mov     [bp+var_2], 0       

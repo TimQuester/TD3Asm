@@ -21,7 +21,7 @@ seg004:3F81	mov     bp, sp
 seg004:3F83	sub     sp, 2       
 seg004:3F86	mov     byte ptr ds:90F0h, 0       
 seg004:3F8B	mov     ax, 1       
-seg004:3F8E	mov     ds:word_2BEDA, ax       
+seg004:3F8E	mov     ds:g_VideoSegmentTable, ax       
 seg004:3F91	push    ax       
 seg004:3F92	call    Video_SelectLayer       
 seg004:3F97	add     sp, 2       
@@ -37,7 +37,7 @@ seg004:3FAC	mov     ax, 13Fh
 seg004:3FAF	push    ax       
 seg004:3FB0	sub     ax, ax       
 seg004:3FB2	push    ax       
-seg004:3FB3	call    far ptr EGA_DrawRect       
+seg004:3FB3	call    far ptr FillRectWithColor       
 seg004:3FB8	add     sp, 8       
 seg004:3FBB	mov     ax, ds:word_2C942       
 seg004:3FBE	mov     cl, 3       

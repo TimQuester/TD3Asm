@@ -24,7 +24,7 @@ seg009:77D6	push    di
 seg009:77D7	push    bp       
 seg009:77D8	push    es       
 seg009:77D9	mov     ax, 1       
-seg009:77DC	mov     ds:word_2BEDA, ax       
+seg009:77DC	mov     ds:g_VideoSegmentTable, ax       
 seg009:77DF	push    ax       
 seg009:77E0	call    Video_SelectLayer       
 seg009:77E5	add     sp, 2       
@@ -78,7 +78,7 @@ seg009:788A	jz      short loc_1DBAF
 seg009:788C	call    ActivateGameMode       
 seg009:788F	call    sub_1DF41       
 seg009:7894	sub     ax, ax       
-seg009:7896	mov     ds:word_2BEDA, ax       
+seg009:7896	mov     ds:g_VideoSegmentTable, ax       
 seg009:7899	push    ax       
 seg009:789A	call    Video_SelectLayer       
 seg009:789F	add     sp, 2       
