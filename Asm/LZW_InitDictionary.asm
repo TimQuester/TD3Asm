@@ -1,26 +1,26 @@
 ;================================================================================
 ;; Function: LZW_InitDictionary
-;; Address: seg007:01C1
+;; Address: seg004:01C1
 ;; Size: 19 bytes (0x13)
 ;; Flags: None
-;; Segment: seg007
+;; Segment: seg004
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg007:009A -> LZW_Decompress
+;;	call from seg004:009A -> LZW_Decompress
 ;; Calls TO (outgoing xrefs): None
 ;; Data references:
-;;	data ref dseg:94C4 -> g_CodeBitLength
+;;	data ref dseg:16C4 -> word_25704
 ;; ----------------------------------------
 
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg007:01C1	mov     word ptr ds:g_CodeBitLength, 9       
-seg007:01C7	mov     ds:g_MaxCode, 200h       
-seg007:01CD	mov     ds:g_DictSize, 102h       
-seg007:01D3	retn       
+seg004:01C1	mov     word_25704, 9       
+seg004:01C7	mov     word_25706, 200h       
+seg004:01CD	mov     word_25700, 102h       
+seg004:01D3	retn       
 
 ;================================================================================
 ;; End of function LZW_InitDictionary

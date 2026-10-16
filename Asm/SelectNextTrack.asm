@@ -1,14 +1,14 @@
 ;================================================================================
 ;; Function: SelectNextTrack
-;; Address: seg004:36D0
+;; Address: seg001:36D0
 ;; Size: 96 bytes (0x60)
 ;; Flags: FAR
-;; Segment: seg004
+;; Segment: seg001
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg004:36AC -> SelectCourse
+;;	call from seg001:36AC -> SelectCourse
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None
 ;; ----------------------------------------
@@ -16,46 +16,46 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg004:36D0	push    bp       
-seg004:36D1	mov     bp, sp       
-seg004:36D3	sub     sp, 4       
-seg004:36D6	mov     ax, [bp+currentTrack]       
-seg004:36D9	mov     [bp+var_2], ax       
-seg004:36DC	mov     al, ds:byte_2C947       
-seg004:36DF	sub     ah, ah       
-seg004:36E1	dec     ax       
-seg004:36E2	cmp     [bp+currentTrack], ax       
-seg004:36E5	jnz     short loc_D83C       
-seg004:36E7	mov     [bp+currentTrack], 0       
-seg004:36EC	jmp     short loc_D83F       
-seg004:36EE	inc     [bp+currentTrack]       
-seg004:36F1	mov     ax, 0AEAh       
-seg004:36F4	push    ax       
-seg004:36F5	mov     ax, 0ADAh       
-seg004:36F8	push    ax       
-seg004:36F9	push    [bp+currentTrack]       
-seg004:36FC	push    cs       
-seg004:36FD	call    near ptr LoadTrackData       
-seg004:3700	add     sp, 6       
-seg004:3703	mov     [bp+var_4], ax       
-seg004:3706	or      ax, ax       
-seg004:3708	jz      short loc_D877       
-seg004:370A	mov     al, ds:byte_2C947       
-seg004:370D	sub     ah, ah       
-seg004:370F	dec     ax       
-seg004:3710	cmp     [bp+currentTrack], ax       
-seg004:3713	jnz     short loc_D86A       
-seg004:3715	mov     [bp+currentTrack], 0       
-seg004:371A	jmp     short loc_D86D       
-seg004:371C	inc     [bp+currentTrack]       
-seg004:371F	mov     ax, [bp+var_2]       
-seg004:3722	mov     [bp+currentTrack], ax       
-seg004:3725	or      ax, ax       
-seg004:3727	jz      short loc_D83F       
-seg004:3729	mov     ax, [bp+currentTrack]       
-seg004:372C	mov     sp, bp       
-seg004:372E	pop     bp       
-seg004:372F	retf       
+seg001:36D0	push    bp       
+seg001:36D1	mov     bp, sp       
+seg001:36D3	sub     sp, 4       
+seg001:36D6	mov     ax, [bp+arg_0]       
+seg001:36D9	mov     [bp+var_2], ax       
+seg001:36DC	mov     al, byte_24B47       
+seg001:36DF	sub     ah, ah       
+seg001:36E1	dec     ax       
+seg001:36E2	cmp     [bp+arg_0], ax       
+seg001:36E5	jnz     short loc_D83C       
+seg001:36E7	mov     [bp+arg_0], 0       
+seg001:36EC	jmp     short loc_D83F       
+seg001:36EE	inc     [bp+arg_0]       
+seg001:36F1	mov     ax, 0AEAh       
+seg001:36F4	push    ax       
+seg001:36F5	mov     ax, 0ADAh       
+seg001:36F8	push    ax       
+seg001:36F9	push    [bp+arg_0]       
+seg001:36FC	push    cs       
+seg001:36FD	call    near ptr LoadTrackData       
+seg001:3700	add     sp, 6       
+seg001:3703	mov     [bp+var_4], ax       
+seg001:3706	or      ax, ax       
+seg001:3708	jz      short loc_D877       
+seg001:370A	mov     al, byte_24B47       
+seg001:370D	sub     ah, ah       
+seg001:370F	dec     ax       
+seg001:3710	cmp     [bp+arg_0], ax       
+seg001:3713	jnz     short loc_D86A       
+seg001:3715	mov     [bp+arg_0], 0       
+seg001:371A	jmp     short loc_D86D       
+seg001:371C	inc     [bp+arg_0]       
+seg001:371F	mov     ax, [bp+var_2]       
+seg001:3722	mov     [bp+arg_0], ax       
+seg001:3725	or      ax, ax       
+seg001:3727	jz      short loc_D83F       
+seg001:3729	mov     ax, [bp+arg_0]       
+seg001:372C	mov     sp, bp       
+seg001:372E	pop     bp       
+seg001:372F	retf       
 
 ;================================================================================
 ;; End of function SelectNextTrack

@@ -1,15 +1,15 @@
 ;================================================================================
 ;; Function: ResetGameData
-;; Address: seg040:0277
+;; Address: seg037:0277
 ;; Size: 40 bytes (0x28)
 ;; Flags: None
-;; Segment: seg040
+;; Segment: seg037
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg040:01E1 -> Sound_Init
-;;	call from seg040:0FFB -> InitializeAudioSystem
+;;	call from seg037:01E1 -> Sound_Init
+;;	call from seg037:0FFB -> InitializeAudioSystem
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None
 ;; ----------------------------------------
@@ -17,29 +17,29 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg040:0277	push    cx       
-seg040:0278	push    es       
-seg040:0279	push    ds       
-seg040:027A	push    di       
-seg040:027B	push    si       
-seg040:027C	cld       
-seg040:027D	mov     ax, seg dseg       
-seg040:0280	mov     ds, ax       
-seg040:0282	mov     es, ax       
-seg040:0284	sub     ax, ax       
-seg040:0286	mov     cx, 162h       
-seg040:0289	mov     di, 0C638h       
-seg040:028C	rep stosb       
-seg040:028E	mov     cx, 0A0h 	; ' '       
-seg040:0291	mov     si, 0C79Ah       
-seg040:0294	mov     di, 0C6B8h       
-seg040:0297	rep movsb       
-seg040:0299	pop     si       
-seg040:029A	pop     di       
-seg040:029B	pop     ds       
-seg040:029C	pop     es       
-seg040:029D	pop     cx       
-seg040:029E	retn       
+seg037:0277	push    cx       
+seg037:0278	push    es       
+seg037:0279	push    ds       
+seg037:027A	push    di       
+seg037:027B	push    si       
+seg037:027C	cld       
+seg037:027D	mov     ax, seg dseg       
+seg037:0280	mov     ds, ax       
+seg037:0282	mov     es, ax       
+seg037:0284	sub     ax, ax       
+seg037:0286	mov     cx, 162h       
+seg037:0289	mov     di, 0C638h       
+seg037:028C	rep stosb       
+seg037:028E	mov     cx, 0A0h       
+seg037:0291	mov     si, 0C79Ah       
+seg037:0294	mov     di, 0C6B8h       
+seg037:0297	rep movsb       
+seg037:0299	pop     si       
+seg037:029A	pop     di       
+seg037:029B	pop     ds       
+seg037:029C	pop     es       
+seg037:029D	pop     cx       
+seg037:029E	retn       
 
 ;================================================================================
 ;; End of function ResetGameData

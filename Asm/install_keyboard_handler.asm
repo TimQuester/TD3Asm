@@ -1,14 +1,14 @@
 ;================================================================================
 ;; Function: install_keyboard_handler
-;; Address: seg008:0E2C
+;; Address: seg005:0E2C
 ;; Size: 80 bytes (0x50)
 ;; Flags: FAR
-;; Segment: seg008
+;; Segment: seg005
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg003:005E -> Main
+;;	call from seg000:005E -> Main
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None
 ;; ----------------------------------------
@@ -16,40 +16,40 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg008:0E2C	push    es       
-seg008:0E2D	push    ds       
-seg008:0E2E	push    si       
-seg008:0E2F	xor     ax, ax       
-seg008:0E31	mov     es, ax       
-seg008:0E33	mov     bl, byte ptr es:unk_417       
-seg008:0E38	and     bl, 0F3h       
-seg008:0E3B	mov     byte ptr es:unk_417, bl       
-seg008:0E40	mov     ds:9158h, al       
-seg008:0E43	mov     ds:9159h, al       
-seg008:0E46	mov     ds:915Ah, al       
-seg008:0E49	mov     ds:915Bh, al       
-seg008:0E4C	mov     ds:915Ch, al       
-seg008:0E4F	mov     ax, 3509h       
-seg008:0E52	int     21h	; DOS - 2+ - GET INTERRUPT VECTOR       
-seg008:0E54	mov     ds:9154h, bx       
-seg008:0E58	mov     word ptr ds:9156h, es       
-seg008:0E5C	cli       
-seg008:0E5D	push    ds       
-seg008:0E5E	mov     ax, cs       
-seg008:0E60	mov     ds, ax       
-seg008:0E62	in      al, 61h	; PC/XT PPI port B bits:       
-seg008:0E64	and     al, 7Fh       
-seg008:0E66	out     61h, al	; PC/XT PPI port B bits:       
-seg008:0E68	mov     dx, 0E98h       
-seg008:0E6B	mov     ax, 2509h       
-seg008:0E6E	int     21h	; DOS - SET INTERRUPT VECTOR       
-seg008:0E70	pop     ds       
-seg008:0E71	sti       
-seg008:0E72	mov     word ptr ds:unk_2BEDD, 1       
-seg008:0E78	pop     si       
-seg008:0E79	pop     ds       
-seg008:0E7A	pop     es       
-seg008:0E7B	retf       
+seg005:0E2C	push    es       
+seg005:0E2D	push    ds       
+seg005:0E2E	push    si       
+seg005:0E2F	xor     ax, ax       
+seg005:0E31	mov     es, ax       
+seg005:0E33	mov     bl, es:417h       
+seg005:0E38	and     bl, 0F3h       
+seg005:0E3B	mov     es:417h, bl       
+seg005:0E40	mov     byte_2D198, al       
+seg005:0E43	mov     byte_2D199, al       
+seg005:0E46	mov     byte_2D19A, al       
+seg005:0E49	mov     byte_2D19B, al       
+seg005:0E4C	mov     byte_2D19C, al       
+seg005:0E4F	mov     ax, 3509h       
+seg005:0E52	int     21h       
+seg005:0E54	mov     word ptr dword_2D194, bx       
+seg005:0E58	mov     word ptr dword_2D194+2, es       
+seg005:0E5C	cli       
+seg005:0E5D	push    ds       
+seg005:0E5E	mov     ax, cs       
+seg005:0E60	mov     ds, ax       
+seg005:0E62	in      al, 61h       
+seg005:0E64	and     al, 7Fh       
+seg005:0E66	out     61h, al       
+seg005:0E68	mov     dx, 0E98h       
+seg005:0E6B	mov     ax, 2509h       
+seg005:0E6E	int     21h       
+seg005:0E70	pop     ds       
+seg005:0E71	sti       
+seg005:0E72	mov     word ptr unk_240DD, 1       
+seg005:0E78	pop     si       
+seg005:0E79	pop     ds       
+seg005:0E7A	pop     es       
+seg005:0E7B	retf       
 
 ;================================================================================
 ;; End of function install_keyboard_handler

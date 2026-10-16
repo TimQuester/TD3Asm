@@ -1,14 +1,14 @@
 ;================================================================================
 ;; Function: _itoa
-;; Address: seg039:145C
+;; Address: seg036:145C
 ;; Size: 27 bytes (0x1B)
-;; Flags: LIBRARY, FAR
-;; Segment: seg039
+;; Flags: FAR
+;; Segment: seg036
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg039:02D9 -> _fclose
+;;	call from seg036:02D9 -> _fclose
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None
 ;; ----------------------------------------
@@ -16,19 +16,19 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg039:145C	push    bp       
-seg039:145D	mov     bp, sp       
-seg039:145F	push    si       
-seg039:1460	push    di       
-seg039:1461	mov     bl, 1       
-seg039:1463	mov     cx, word ptr [bp+arg_4+2]       
-seg039:1466	mov     ax, [bp+arg_2]       
-seg039:1469	xor     dx, dx       
-seg039:146B	cmp     cx, 0Ah       
-seg039:146E	jnz     short loc_22A79       
-seg039:1470	cwd       
-seg039:1471	mov     di, word ptr [bp+arg_4]       
-seg039:1474	jmp     __cxtoa       
+seg036:145C	push    bp       
+seg036:145D	mov     bp, sp       
+seg036:145F	push    si       
+seg036:1460	push    di       
+seg036:1461	mov     bl, 1       
+seg036:1463	mov     cx, [bp+arg_6]       
+seg036:1466	mov     ax, [bp+arg_2]       
+seg036:1469	xor     dx, dx       
+seg036:146B	cmp     cx, 0Ah       
+seg036:146E	jnz     short loc_22A79       
+seg036:1470	cwd       
+seg036:1471	mov     di, [bp+arg_4]       
+seg036:1474	jmp     loc_22E3A       
 
 ;================================================================================
 ;; End of function _itoa

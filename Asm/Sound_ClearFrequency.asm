@@ -1,9 +1,9 @@
 ;================================================================================
 ;; Function: Sound_ClearFrequency
-;; Address: seg040:0ED9
+;; Address: seg037:0ED9
 ;; Size: 11 bytes (0xB)
 ;; Flags: None
-;; Segment: seg040
+;; Segment: seg037
 ;================================================================================
 
 ;; ----------------------------------------
@@ -15,10 +15,10 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg040:0ED9	sub     ax, ax       
-seg040:0EDB	mov     [si-34FBh], ax       
-seg040:0EDF	mov     [si-34E9h], ax       
-seg040:0EE3	retn       
+seg037:0ED9	sub     ax, ax       
+seg037:0EDB	mov     [si-34FBh], ax       
+seg037:0EDF	mov     [si-34E9h], ax       
+seg037:0EE3	retn       
 
 ;================================================================================
 ;; End of function Sound_ClearFrequency

@@ -1,88 +1,88 @@
 ;================================================================================
 ;; Function: Video_SelectLayer
-;; Address: seg023:000E
+;; Address: seg020:000E
 ;; Size: 66 bytes (0x42)
 ;; Flags: FAR
-;; Segment: seg023
+;; Segment: seg020
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg003:066D -> Main
-;;	call from seg003:0CBE -> ReadConfigFile
-;;	call from seg003:0CD1 -> ReadConfigFile
-;;	call from seg003:1815 -> MenuDispatcher
-;;	call from seg003:1E17 -> MenuDispatcher
-;;	call from seg004:00EA -> ShowIntro
-;;	call from seg004:02FB -> ShowIntro
-;;	call from seg004:03CA -> ShowIntro
-;;	call from seg004:082B -> ShowIntro
-;;	call from seg004:0872 -> ShowIntro
-;;	call from seg004:08AB -> ShowIntro
-;;	call from seg004:0A53 -> ShowIntro
-;;	call from seg004:0AC0 -> sub_ABD6
-;;	call from seg004:0C40 -> sub_ABD6
-;;	call from seg004:0F77 -> DrawCarRecords
-;;	call from seg004:1466 -> MainSelectScreen
-;;	call from seg004:150C -> MainSelectScreen
-;;	call from seg004:1672 -> MainSelectScreen
-;;	call from seg004:16DF -> MainSelectScreen
-;;	call from seg004:17BA -> MainSelectScreen
-;;	call from seg004:181A -> MainSelectScreen
-;;	call from seg004:19F8 -> DisplayCreditsInIntro
-;;	call from seg004:1BE0 -> DrawSparseBackgroundStripes
-;;	call from seg004:1F4D -> sub_C018
-;;	call from seg004:205C -> sub_C018
-;;	call from seg004:206F -> sub_C018
-;;	call from seg004:214B -> sub_C018
-;;	call from seg004:23E2 -> sub_C018
-;;	call from seg004:25BE -> sub_C018
-;;	call from seg004:2F0C -> sub_D04E
-;;	call from seg004:3412 -> sub_D538
-;;	call from seg004:35BA -> sub_D538
-;;	call from seg004:361F -> sub_D538
-;;	call from seg004:37A0 -> sub_D8DC
-;;	call from seg004:3809 -> sub_D8DC
-;;	call from seg004:3839 -> sub_D8DC
-;;	call from seg004:3AF5 -> sub_D8DC
-;;	call from seg004:3B6D -> SelectDriver
-;;	call from seg004:3C89 -> SelectDriver
-;;	call from seg004:3DCA -> SelectDriver
-;;	call from seg004:3F92 -> sub_E0CE
-;;	call from seg004:46E0 -> sub_E20E
-;;	call from seg004:470D -> sub_E84E
-;;	call from seg004:4960 -> ShowRecords
-;;	call from seg004:4CBA -> ShowRecords
-;;	call from seg005:0159 -> RunRace
-;;	call from seg005:0172 -> RunRace
-;;	call from seg005:020A -> RunRace
-;;	call from seg005:03DE -> RunRace
-;;	call from seg005:04FC -> sub_FFEA
-;;	call from seg005:0541 -> sub_FFEA
-;;	call from seg005:05C3 -> sub_100BA
-;;	call from seg005:0607 -> sub_10122
-;;	call from seg005:09A4 -> sub_10442
-;;	call from seg005:09E0 -> sub_10442
-;;	call from seg005:0CC5 -> sub_10442
-;;	call from seg005:0CE6 -> sub_1080C
-;;	call from seg005:0D19 -> sub_1080C
-;;	call from seg005:10B2 -> sub_10BC6
-;;	call from seg005:11B0 -> sub_10C76
-;;	call from seg005:12CB -> sub_10C76
-;;	call from seg005:145E -> sub_10E30
-;;	call from seg005:15EC -> sub_110F4
-;;	call from seg005:171B -> sub_111E4
-;;	call from seg005:18DA -> sub_113FA
-;;	call from seg005:19C5 -> sub_114EA
-;;	call from seg005:1A59 -> sub_114EA
-;;	call from seg005:1C1B -> sub_11720
-;;	call from seg005:1DAA -> sub_11786
-;;	call from seg009:008A -> sub_163A4
-;;	call from seg009:0346 -> sub_1663C
-;;	call from seg009:039C -> sub_1663C
-;;	call from seg009:77C2 -> sub_1DA0C
-;;	call from seg009:77E0 -> sub_1DAF5
-;;	call from seg009:789A -> sub_1DAF5
+;;	call from seg000:066D -> Main
+;;	call from seg000:0CBE -> ReadConfigFile
+;;	call from seg000:0CD1 -> ReadConfigFile
+;;	call from seg000:1815 -> MenuDispatcher
+;;	call from seg000:1E17 -> MenuDispatcher
+;;	call from seg001:00EA -> ShowIntro
+;;	call from seg001:02FB -> ShowIntro
+;;	call from seg001:03CA -> ShowIntro
+;;	call from seg001:082B -> ShowIntro
+;;	call from seg001:0872 -> ShowIntro
+;;	call from seg001:08AB -> ShowIntro
+;;	call from seg001:0A53 -> ShowIntro
+;;	call from seg001:0AC0 -> Screen_ShowFinalStandings
+;;	call from seg001:0C40 -> Screen_ShowFinalStandings
+;;	call from seg001:0F77 -> DrawCarRecords
+;;	call from seg001:1466 -> MainSelectScreen
+;;	call from seg001:150C -> MainSelectScreen
+;;	call from seg001:1672 -> MainSelectScreen
+;;	call from seg001:16DF -> MainSelectScreen
+;;	call from seg001:17BA -> MainSelectScreen
+;;	call from seg001:181A -> MainSelectScreen
+;;	call from seg001:19F8 -> DisplayCreditsInIntro
+;;	call from seg001:1BE0 -> DrawSparseBackgroundStripes
+;;	call from seg001:1F4D -> Screen_ComputerOpponentShowcase
+;;	call from seg001:205C -> Screen_ComputerOpponentShowcase
+;;	call from seg001:206F -> Screen_ComputerOpponentShowcase
+;;	call from seg001:214B -> Screen_ComputerOpponentShowcase
+;;	call from seg001:23E2 -> Screen_ComputerOpponentShowcase
+;;	call from seg001:25BE -> Screen_ComputerOpponentShowcase
+;;	call from seg001:2F0C -> Screen_SelectAddonTrackList
+;;	call from seg001:3412 -> SelectCar_DrawCarPreview
+;;	call from seg001:35BA -> SelectCar_DrawCarPreview
+;;	call from seg001:361F -> SelectCar_DrawCarPreview
+;;	call from seg001:37A0 -> SelectCourse_DrawTrackList
+;;	call from seg001:3809 -> SelectCourse_DrawTrackList
+;;	call from seg001:3839 -> SelectCourse_DrawTrackList
+;;	call from seg001:3AF5 -> SelectCourse_DrawTrackList
+;;	call from seg001:3B6D -> SelectDriver
+;;	call from seg001:3C89 -> SelectDriver
+;;	call from seg001:3DCA -> SelectDriver
+;;	call from seg001:3F92 -> Screen_LoadSceneColors
+;;	call from seg001:46E0 -> Screen_AnnounceWinner
+;;	call from seg001:470D -> Records_DrawDetailPanels
+;;	call from seg001:4960 -> ShowRecords
+;;	call from seg001:4CBA -> ShowRecords
+;;	call from seg002:0159 -> RunRace
+;;	call from seg002:0172 -> RunRace
+;;	call from seg002:020A -> RunRace
+;;	call from seg002:03DE -> RunRace
+;;	call from seg002:04FC -> Race_EnterRaceView
+;;	call from seg002:0541 -> Race_EnterRaceView
+;;	call from seg002:05C3 -> Race_OpenRaceMenu
+;;	call from seg002:0607 -> Race_DrawMessageOverlay
+;;	call from seg002:09A4 -> Race_LoadTrackPalettes
+;;	call from seg002:09E0 -> Race_LoadTrackPalettes
+;;	call from seg002:0CC5 -> Race_LoadTrackPalettes
+;;	call from seg002:0CE6 -> Race_RenderWorldFrame
+;;	call from seg002:0D19 -> Race_RenderWorldFrame
+;;	call from seg002:10B2 -> Race_ResetViewState
+;;	call from seg002:11B0 -> Dash_DrawDashboard
+;;	call from seg002:12CB -> Dash_DrawDashboard
+;;	call from seg002:145E -> Dash_UpdateSteeringWheel
+;;	call from seg002:15EC -> Dash_DrawSpeedometer
+;;	call from seg002:171B -> Dash_DrawNumericReadout
+;;	call from seg002:18DA -> Dash_DrawGaugeNeedle
+;;	call from seg002:19C5 -> Race_PlayEventAnimation
+;;	call from seg002:1A59 -> Race_PlayEventAnimation
+;;	call from seg002:1C1B -> Race_DrawSpriteFromCompressedResource
+;;	call from seg002:1DAA -> Race_LoadRoadTextures
+;;	call from seg006:008A -> GS_DispatchEvent
+;;	call from seg006:0346 -> GS_Event_81_ToggleAnimation
+;;	call from seg006:039C -> GS_Event_81_ToggleAnimation
+;;	call from seg006:77C2 -> Race_UpdateWorld
+;;	call from seg006:77E0 -> Race_UpdateActors
+;;	call from seg006:789A -> Race_UpdateActors
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None
 ;; ----------------------------------------
@@ -90,32 +90,32 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg023:000E	push    bp       
-seg023:000F	mov     bp, sp       
-seg023:0011	mov     ax, [bp+layer_index]       
-seg023:0014	and     ax, 0Fh       
-seg023:0017	lea     bx, ds:50h       
-seg023:001B	add     bx, ds:g_LayerJumpTable	; Таблица функций для каждого слоя       
-seg023:001F	jmp     word ptr cs:[bx]       
-seg023:0022	cmp     al, 1       
-seg023:0024	jle     short loc_1F378       
-seg023:0026	mov     ds:g_VideoLayer, al	; Текущий активный слой (0-15)       
-seg023:0029	lea     bx, g_LayerOffsetTable	; Таблица смещений для слоёв       
-seg023:002D	shl     ax, 1       
-seg023:002F	add     bx, ax       
-seg023:0031	mov     ax, [bx]       
-seg023:0033	mov     ds:g_VideoBufferOffset, ax	; Смещение видеопамяти для текущего слоя       
-seg023:0036	jmp     short loc_1F38C       
-seg023:0038	mov     ds:g_VideoLayer, al	; Текущий активный слой (0-15)       
-seg023:003B	mov     cx, ds:g_ScreenPageSize	; Размер страницы экрана (для умножения)       
-seg023:003F	mul     cx       
-seg023:0041	mov     cl, 4       
-seg023:0043	shr     ax, cl       
-seg023:0045	add     ax, ds:g_VideoBaseOffset	; Базовое смещение видеопамяти       
-seg023:0049	mov     ds:g_VideoBufferOffset, ax	; Смещение видеопамяти для текущего слоя       
-seg023:004C	xor     ax, ax       
-seg023:004E	pop     bp       
-seg023:004F	retf       
+seg020:000E	push    bp       
+seg020:000F	mov     bp, sp       
+seg020:0011	mov     ax, [bp+arg_2]       
+seg020:0014	and     ax, 0Fh       
+seg020:0017	lea     bx, aWaterLz+3	; "ER.LZ"       
+seg020:001B	add     bx, word_2FD84       
+seg020:001F	jmp     word ptr cs:[bx]       
+seg020:0022	cmp     al, 1       
+seg020:0024	jle     short loc_1F378       
+seg020:0026	mov     byte_2FD80, al       
+seg020:0029	lea     bx, unk_2FDCC       
+seg020:002D	shl     ax, 1       
+seg020:002F	add     bx, ax       
+seg020:0031	mov     ax, [bx]       
+seg020:0033	mov     word_2FDC8, ax       
+seg020:0036	jmp     short loc_1F38C       
+seg020:0038	mov     byte_2FD80, al       
+seg020:003B	mov     cx, word_301EC       
+seg020:003F	mul     cx       
+seg020:0041	mov     cl, 4       
+seg020:0043	shr     ax, cl       
+seg020:0045	add     ax, word_30270       
+seg020:0049	mov     word_2FDC8, ax       
+seg020:004C	xor     ax, ax       
+seg020:004E	pop     bp       
+seg020:004F	retf       
 
 ;================================================================================
 ;; End of function Video_SelectLayer

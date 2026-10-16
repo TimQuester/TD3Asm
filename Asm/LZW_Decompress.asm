@@ -1,158 +1,158 @@
 ;================================================================================
 ;; Function: LZW_Decompress
-;; Address: seg007:003E
+;; Address: seg004:003E
 ;; Size: 249 bytes (0xF9)
 ;; Flags: FAR
-;; Segment: seg007
+;; Segment: seg004
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg004:00DB -> ShowIntro
-;;	call from seg004:0334 -> ShowIntro
-;;	call from seg004:038A -> ShowIntro
-;;	call from seg004:0430 -> ShowIntro
-;;	call from seg004:0486 -> ShowIntro
-;;	call from seg004:073A -> ShowIntro
-;;	call from seg004:07B8 -> ShowIntro
-;;	call from seg004:0905 -> ShowIntro
-;;	call from seg004:095B -> ShowIntro
-;;	call from seg004:09B2 -> ShowIntro
-;;	call from seg004:0B1A -> sub_ABD6
-;;	call from seg004:0B70 -> sub_ABD6
-;;	call from seg004:0FB0 -> DrawCarRecords
-;;	call from seg004:1006 -> DrawCarRecords
-;;	call from seg004:105D -> DrawCarRecords
-;;	call from seg004:1521 -> MainSelectScreen
-;;	call from seg004:15B4 -> MainSelectScreen
-;;	call from seg004:1622 -> MainSelectScreen
-;;	call from seg004:1F86 -> sub_C018
-;;	call from seg004:1FDC -> sub_C018
-;;	call from seg004:20A8 -> sub_C018
-;;	call from seg004:211F -> sub_C018
-;;	call from seg004:3486 -> sub_D538
-;;	call from seg004:34DD -> sub_D538
-;;	call from seg004:3533 -> sub_D538
-;;	call from seg004:3589 -> sub_D538
-;;	call from seg004:35F3 -> sub_D538
-;;	call from seg004:37F0 -> sub_D8DC
-;;	call from seg004:38D2 -> sub_D8DC
-;;	call from seg004:391D -> sub_D8DC
-;;	call from seg004:39CB -> sub_D8DC
-;;	call from seg004:3A23 -> sub_D8DC
-;;	call from seg004:3ACC -> sub_D8DC
-;;	call from seg004:3B82 -> SelectDriver
-;;	call from seg004:3BB4 -> SelectDriver
-;;	call from seg004:3BE7 -> SelectDriver
-;;	call from seg004:4033 -> sub_E0CE
-;;	call from seg004:408B -> sub_E0CE
-;;	call from seg004:4823 -> sub_E84E
-;;	call from seg005:0511 -> sub_FFEA
-;;	call from seg005:061C -> sub_10122
-;;	call from seg005:0A19 -> sub_10442
-;;	call from seg005:0C39 -> sub_10442
-;;	call from seg005:0C90 -> sub_10442
-;;	call from seg005:19DA -> sub_114EA
-;;	call from seg005:1C01 -> sub_11720
-;;	call from seg005:1CA3 -> sub_11786
-;;	call from seg005:1CF7 -> sub_11786
-;;	call from seg005:1D59 -> sub_11786
-;;	call from seg005:1DBF -> sub_11786
+;;	call from seg001:00DB -> ShowIntro
+;;	call from seg001:0334 -> ShowIntro
+;;	call from seg001:038A -> ShowIntro
+;;	call from seg001:0430 -> ShowIntro
+;;	call from seg001:0486 -> ShowIntro
+;;	call from seg001:073A -> ShowIntro
+;;	call from seg001:07B8 -> ShowIntro
+;;	call from seg001:0905 -> ShowIntro
+;;	call from seg001:095B -> ShowIntro
+;;	call from seg001:09B2 -> ShowIntro
+;;	call from seg001:0B1A -> Screen_ShowFinalStandings
+;;	call from seg001:0B70 -> Screen_ShowFinalStandings
+;;	call from seg001:0FB0 -> DrawCarRecords
+;;	call from seg001:1006 -> DrawCarRecords
+;;	call from seg001:105D -> DrawCarRecords
+;;	call from seg001:1521 -> MainSelectScreen
+;;	call from seg001:15B4 -> MainSelectScreen
+;;	call from seg001:1622 -> MainSelectScreen
+;;	call from seg001:1F86 -> Screen_ComputerOpponentShowcase
+;;	call from seg001:1FDC -> Screen_ComputerOpponentShowcase
+;;	call from seg001:20A8 -> Screen_ComputerOpponentShowcase
+;;	call from seg001:211F -> Screen_ComputerOpponentShowcase
+;;	call from seg001:3486 -> SelectCar_DrawCarPreview
+;;	call from seg001:34DD -> SelectCar_DrawCarPreview
+;;	call from seg001:3533 -> SelectCar_DrawCarPreview
+;;	call from seg001:3589 -> SelectCar_DrawCarPreview
+;;	call from seg001:35F3 -> SelectCar_DrawCarPreview
+;;	call from seg001:37F0 -> SelectCourse_DrawTrackList
+;;	call from seg001:38D2 -> SelectCourse_DrawTrackList
+;;	call from seg001:391D -> SelectCourse_DrawTrackList
+;;	call from seg001:39CB -> SelectCourse_DrawTrackList
+;;	call from seg001:3A23 -> SelectCourse_DrawTrackList
+;;	call from seg001:3ACC -> SelectCourse_DrawTrackList
+;;	call from seg001:3B82 -> SelectDriver
+;;	call from seg001:3BB4 -> SelectDriver
+;;	call from seg001:3BE7 -> SelectDriver
+;;	call from seg001:4033 -> Screen_LoadSceneColors
+;;	call from seg001:408B -> Screen_LoadSceneColors
+;;	call from seg001:4823 -> Records_DrawDetailPanels
+;;	call from seg002:0511 -> Race_EnterRaceView
+;;	call from seg002:061C -> Race_DrawMessageOverlay
+;;	call from seg002:0A19 -> Race_LoadTrackPalettes
+;;	call from seg002:0C39 -> Race_LoadTrackPalettes
+;;	call from seg002:0C90 -> Race_LoadTrackPalettes
+;;	call from seg002:19DA -> Race_PlayEventAnimation
+;;	call from seg002:1C01 -> Race_DrawSpriteFromCompressedResource
+;;	call from seg002:1CA3 -> Race_LoadRoadTextures
+;;	call from seg002:1CF7 -> Race_LoadRoadTextures
+;;	call from seg002:1D59 -> Race_LoadRoadTextures
+;;	call from seg002:1DBF -> Race_LoadRoadTextures
 ;; Calls TO (outgoing xrefs): None
 ;; Data references:
-;;	data ref dseg:BD3F -> g_DecompressionFlag
+;;	data ref dseg:BD3F -> byte_2FD7F
 ;; ----------------------------------------
 
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg007:003E	mov     ds:g_DecompressionFlag, 1       
-seg007:0043	mov     ds:g_DictSize, 102h       
-seg007:0049	mov     ds:g_StackCount, 0       
-seg007:004F	mov     word ptr ds:g_CodeBitLength, 9       
-seg007:0055	mov     ds:g_MaxCode, 200h       
-seg007:005B	mov     ds:g_BitBuffer, 0       
-seg007:0061	push    bp       
-seg007:0062	mov     bp, sp       
-seg007:0064	push    di       
-seg007:0065	push    si       
-seg007:0066	push    ds       
-seg007:0067	push    es       
-seg007:0068	mov     ax, [bp+src_off]       
-seg007:006B	mov     word ptr ds:g_SrcPointer, ax       
-seg007:006E	mov     ax, [bp+src_seg]       
-seg007:0071	mov     word ptr ds:g_SrcPointer+2, ax       
-seg007:0074	mov     ax, [bp+dst_off]       
-seg007:0077	mov     di, ax       
-seg007:0079	mov     word ptr ds:g_DstPointer, ax       
-seg007:007C	mov     ax, [bp+dst_seg]       
-seg007:007F	mov     es, ax       
-seg007:0081	mov     word ptr ds:g_DstPointer+2, ax       
-seg007:0084	call    LZW_RefillBitBuffer       
-seg007:0087	call    LZW_ReadCode       
-seg007:008A	cmp     ax, 101h	; END       
-seg007:008D	jnz     short loc_12DDE	; CLEAR       
-seg007:008F	pop     es       
-seg007:0090	pop     ds       
-seg007:0091	pop     si       
-seg007:0092	pop     di       
-seg007:0093	pop     bp       
-seg007:0094	retf       
-seg007:0095	cmp     ax, 100h	; CLEAR       
-seg007:0098	jnz     short loc_12DFD       
-seg007:009A	call    LZW_InitDictionary       
-seg007:009D	call    LZW_ReadCode       
-seg007:00A0	mov     ds:g_CurrentCode, ax       
-seg007:00A3	mov     ds:g_OldCode, ax       
-seg007:00A6	mov     ds:g_CurrentSuffix, al       
-seg007:00A9	mov     ds:g_LastSuffix, al       
-seg007:00AC	mov     al, ds:g_CurrentSuffix       
-seg007:00AF	call    LZW_OutputByte       
-seg007:00B2	jmp     short loc_12DD0       
-seg007:00B4	mov     ds:g_CurrentCode, ax       
-seg007:00B7	mov     ds:g_FirstChar, ax       
-seg007:00BA	mov     es, ds:g_DictSegment       
-seg007:00BE	cmp     ax, ds:g_DictSize       
-seg007:00C2	jl      short loc_12E1B       
-seg007:00C4	mov     ax, ds:g_OldCode       
-seg007:00C7	mov     ds:g_CurrentCode, ax       
-seg007:00CA	mov     al, ds:g_LastSuffix       
-seg007:00CD	push    ax       
-seg007:00CE	inc     ds:g_StackCount       
-seg007:00D2	cmp     ds:g_CurrentCode, 0FFh       
-seg007:00D8	jle     short loc_12E3B       
-seg007:00DA	mov     bx, ds:g_CurrentCode       
-seg007:00DE	call    LZW_Mul3       
-seg007:00E1	mov     al, es:[bx+2]       
-seg007:00E5	push    ax       
-seg007:00E6	inc     ds:g_StackCount       
-seg007:00EA	mov     ax, es:[bx]       
-seg007:00ED	mov     ds:g_CurrentCode, ax       
-seg007:00F0	jmp     short loc_12E1B       
-seg007:00F2	push    ds       
-seg007:00F3	pop     es       
-seg007:00F4	mov     ax, ds:g_CurrentCode       
-seg007:00F7	mov     ds:g_LastSuffix, al       
-seg007:00FA	mov     ds:g_CurrentSuffix, al       
-seg007:00FD	push    ax       
-seg007:00FE	inc     ds:g_StackCount       
-seg007:0102	mov     cx, ds:g_StackCount       
-seg007:0106	jcxz    short loc_12E57       
-seg007:0108	pop     ax       
-seg007:0109	call    LZW_OutputByte       
-seg007:010C	loop    loc_12E51       
-seg007:010E	mov     ds:g_StackCount, cx       
-seg007:0112	call    LZW_AddDictionaryEntry       
-seg007:0115	mov     ax, ds:g_FirstChar       
-seg007:0118	mov     ds:g_OldCode, ax       
-seg007:011B	mov     bx, ds:g_DictSize       
-seg007:011F	cmp     bx, ds:g_MaxCode       
-seg007:0123	jl      short loc_12E7D       
-seg007:0125	cmp     word ptr ds:g_CodeBitLength, 0Ch       
-seg007:012A	jz      short loc_12E7D       
-seg007:012C	inc     word ptr ds:g_CodeBitLength       
-seg007:0130	shl     ds:g_MaxCode, 1       
-seg007:0134	jmp     loc_12DD0       
+seg004:003E	mov     byte_2FD7F, 1       
+seg004:0043	mov     word_25700, 102h       
+seg004:0049	mov     word_25702, 0       
+seg004:004F	mov     word_25704, 9       
+seg004:0055	mov     word_25706, 200h       
+seg004:005B	mov     word_25712, 0       
+seg004:0061	push    bp       
+seg004:0062	mov     bp, sp       
+seg004:0064	push    di       
+seg004:0065	push    si       
+seg004:0066	push    ds       
+seg004:0067	push    es       
+seg004:0068	mov     ax, [bp+arg_0]       
+seg004:006B	mov     word ptr dword_252EC, ax       
+seg004:006E	mov     ax, [bp+arg_2]       
+seg004:0071	mov     word ptr dword_252EC+2, ax       
+seg004:0074	mov     ax, [bp+arg_4]       
+seg004:0077	mov     di, ax       
+seg004:0079	mov     word ptr dword_252F0, ax       
+seg004:007C	mov     ax, [bp+arg_6]       
+seg004:007F	mov     es, ax       
+seg004:0081	mov     word ptr dword_252F0+2, ax       
+seg004:0084	call    LZW_RefillBitBuffer       
+seg004:0087	call    LZW_ReadCode       
+seg004:008A	cmp     ax, 101h       
+seg004:008D	jnz     short loc_12DDE       
+seg004:008F	pop     es       
+seg004:0090	pop     ds       
+seg004:0091	pop     si       
+seg004:0092	pop     di       
+seg004:0093	pop     bp       
+seg004:0094	retf       
+seg004:0095	cmp     ax, 100h       
+seg004:0098	jnz     short loc_12DFD       
+seg004:009A	call    LZW_InitDictionary       
+seg004:009D	call    LZW_ReadCode       
+seg004:00A0	mov     word_256FA, ax       
+seg004:00A3	mov     word_256FC, ax       
+seg004:00A6	mov     byte_25709, al       
+seg004:00A9	mov     byte_25708, al       
+seg004:00AC	mov     al, byte_25709       
+seg004:00AF	call    LZW_OutputByte       
+seg004:00B2	jmp     short loc_12DD0       
+seg004:00B4	mov     word_256FA, ax       
+seg004:00B7	mov     word_256FE, ax       
+seg004:00BA	mov     es, word_256F8       
+seg004:00BE	cmp     ax, word_25700       
+seg004:00C2	jl      short loc_12E1B       
+seg004:00C4	mov     ax, word_256FC       
+seg004:00C7	mov     word_256FA, ax       
+seg004:00CA	mov     al, byte_25708       
+seg004:00CD	push    ax       
+seg004:00CE	inc     word_25702       
+seg004:00D2	cmp     word_256FA, 0FFh       
+seg004:00D8	jle     short loc_12E3B       
+seg004:00DA	mov     bx, word_256FA       
+seg004:00DE	call    LZW_Mul3       
+seg004:00E1	mov     al, es:[bx+2]       
+seg004:00E5	push    ax       
+seg004:00E6	inc     word_25702       
+seg004:00EA	mov     ax, es:[bx]       
+seg004:00ED	mov     word_256FA, ax       
+seg004:00F0	jmp     short loc_12E1B       
+seg004:00F2	push    ds       
+seg004:00F3	pop     es       
+seg004:00F4	mov     ax, word_256FA       
+seg004:00F7	mov     byte_25708, al       
+seg004:00FA	mov     byte_25709, al       
+seg004:00FD	push    ax       
+seg004:00FE	inc     word_25702       
+seg004:0102	mov     cx, word_25702       
+seg004:0106	jcxz    short loc_12E57       
+seg004:0108	pop     ax       
+seg004:0109	call    LZW_OutputByte       
+seg004:010C	loop    loc_12E51       
+seg004:010E	mov     word_25702, cx       
+seg004:0112	call    LZW_AddDictionaryEntry       
+seg004:0115	mov     ax, word_256FE       
+seg004:0118	mov     word_256FC, ax       
+seg004:011B	mov     bx, word_25700       
+seg004:011F	cmp     bx, word_25706       
+seg004:0123	jl      short loc_12E7D       
+seg004:0125	cmp     word_25704, 0Ch       
+seg004:012A	jz      short loc_12E7D       
+seg004:012C	inc     word_25704       
+seg004:0130	shl     word_25706, 1       
+seg004:0134	jmp     loc_12DD0       
 
 ;================================================================================
 ;; End of function LZW_Decompress

@@ -1,54 +1,54 @@
 ;================================================================================
 ;; Function: SaveGlobalValues
-;; Address: seg018:0000
+;; Address: seg015:0000
 ;; Size: 19 bytes (0x13)
 ;; Flags: FAR
-;; Segment: seg018
+;; Segment: seg015
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg004:0164 -> ShowIntro
-;;	call from seg004:0203 -> ShowIntro
-;;	call from seg004:0C7F -> sub_ABD6
-;;	call from seg004:0D14 -> sub_ABD6
-;;	call from seg004:185F -> DrawRectangleFrame
-;;	call from seg004:1984 -> DrawMenuSelection
-;;	call from seg004:19BB -> DrawMenuSelection
-;;	call from seg004:476D -> sub_E84E
-;;	call from seg004:479C -> sub_E84E
-;;	call from seg004:4878 -> sub_E84E
-;;	call from seg004:48AF -> sub_E84E
-;;	call from seg004:48DE -> sub_E84E
-;;	call from seg004:48FE -> sub_E84E
-;;	call from seg004:491E -> sub_E84E
-;;	call from seg004:4DB0 -> sub_EEBE
-;;	call from seg004:4DDD -> sub_EEBE
-;;	call from seg004:4E06 -> sub_EEBE
-;;	call from seg004:4E53 -> sub_EEBE
-;;	call from seg004:4EC0 -> sub_EEBE
-;;	call from seg004:4F0A -> sub_EEBE
-;;	call from seg004:4F60 -> sub_EEBE
-;;	call from seg004:4FCD -> sub_EEBE
-;;	call from seg004:5034 -> sub_EEBE
-;;	call from seg004:5079 -> sub_EEBE
-;;	call from seg004:5152 -> sub_EEBE
-;;	call from seg005:0A48 -> sub_10442
-;;	call from seg005:0A8E -> sub_10442
-;;	call from seg005:11DB -> sub_10C76
-;;	call from seg005:1598 -> sub_1107E
-;;	call from seg005:165E -> sub_110F4
-;;	call from seg005:1781 -> sub_111E4
-;;	call from seg005:17C2 -> sub_111E4
-;;	call from seg005:1805 -> sub_111E4
-;;	call from seg005:18F8 -> sub_113FA
-;;	call from seg008:07C7 -> DrawSingleSymbol
-;;	call from seg009:0BE7 -> sub_16EA5
-;;	call from seg009:0C19 -> sub_16EA5
-;;	call from seg009:0C5F -> sub_16EA5
-;;	call from seg009:0C93 -> sub_16EA5
-;;	call from seg009:0D57 -> sub_16FDE
-;;	call from seg009:0D89 -> sub_16FDE
+;;	call from seg001:0164 -> ShowIntro
+;;	call from seg001:0203 -> ShowIntro
+;;	call from seg001:0C7F -> Screen_ShowFinalStandings
+;;	call from seg001:0D14 -> Screen_ShowFinalStandings
+;;	call from seg001:185F -> DrawRectangleFrame
+;;	call from seg001:1984 -> DrawMenuSelection
+;;	call from seg001:19BB -> DrawMenuSelection
+;;	call from seg001:476D -> Records_DrawDetailPanels
+;;	call from seg001:479C -> Records_DrawDetailPanels
+;;	call from seg001:4878 -> Records_DrawDetailPanels
+;;	call from seg001:48AF -> Records_DrawDetailPanels
+;;	call from seg001:48DE -> Records_DrawDetailPanels
+;;	call from seg001:48FE -> Records_DrawDetailPanels
+;;	call from seg001:491E -> Records_DrawDetailPanels
+;;	call from seg001:4DB0 -> Records_DrawCarAnimation
+;;	call from seg001:4DDD -> Records_DrawCarAnimation
+;;	call from seg001:4E06 -> Records_DrawCarAnimation
+;;	call from seg001:4E53 -> Records_DrawCarAnimation
+;;	call from seg001:4EC0 -> Records_DrawCarAnimation
+;;	call from seg001:4F0A -> Records_DrawCarAnimation
+;;	call from seg001:4F60 -> Records_DrawCarAnimation
+;;	call from seg001:4FCD -> Records_DrawCarAnimation
+;;	call from seg001:5034 -> Records_DrawCarAnimation
+;;	call from seg001:5079 -> Records_DrawCarAnimation
+;;	call from seg001:5152 -> Records_DrawCarAnimation
+;;	call from seg002:0A48 -> Race_LoadTrackPalettes
+;;	call from seg002:0A8E -> Race_LoadTrackPalettes
+;;	call from seg002:11DB -> Dash_DrawDashboard
+;;	call from seg002:1598 -> Dash_DrawWheelSprite
+;;	call from seg002:165E -> Dash_DrawSpeedometer
+;;	call from seg002:1781 -> Dash_DrawNumericReadout
+;;	call from seg002:17C2 -> Dash_DrawNumericReadout
+;;	call from seg002:1805 -> Dash_DrawNumericReadout
+;;	call from seg002:18F8 -> Dash_DrawGaugeNeedle
+;;	call from seg005:07C7 -> DrawSingleSymbol
+;;	call from seg006:0BE7 -> Race_DrawElapsedTime
+;;	call from seg006:0C19 -> Race_DrawElapsedTime
+;;	call from seg006:0C5F -> Race_DrawElapsedTime
+;;	call from seg006:0C93 -> Race_DrawElapsedTime
+;;	call from seg006:0D57 -> Race_DrawSpeedometer
+;;	call from seg006:0D89 -> Race_DrawSpeedometer
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None
 ;; ----------------------------------------
@@ -56,15 +56,15 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg018:0000	push    bp       
-seg018:0001	mov     bp, sp       
-seg018:0003	mov     ax, [bp+arg_0]       
-seg018:0006	mov     ds:0BD4Bh, ax       
-seg018:0009	mov     ax, [bp+arg_2]       
-seg018:000C	mov     ds:0BD4Dh, ax       
-seg018:000F	xor     ax, ax       
-seg018:0011	pop     bp       
-seg018:0012	retf       
+seg015:0000	push    bp       
+seg015:0001	mov     bp, sp       
+seg015:0003	mov     ax, [bp+arg_0]       
+seg015:0006	mov     word_2FD8B, ax       
+seg015:0009	mov     ax, [bp+arg_2]       
+seg015:000C	mov     word_2FD8D, ax       
+seg015:000F	xor     ax, ax       
+seg015:0011	pop     bp       
+seg015:0012	retf       
 
 ;================================================================================
 ;; End of function SaveGlobalValues

@@ -1,9 +1,9 @@
 ;================================================================================
 ;; Function: handle_special_trigger
-;; Address: seg040:017F
+;; Address: seg037:017F
 ;; Size: 49 bytes (0x31)
 ;; Flags: FAR
-;; Segment: seg040
+;; Segment: seg037
 ;================================================================================
 
 ;; ----------------------------------------
@@ -15,25 +15,25 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg040:017F	push    ax       
-seg040:0180	push    bx       
-seg040:0181	push    cx       
-seg040:0182	push    dx       
-seg040:0183	test    byte ptr ds:0C5E2h, 10h       
-seg040:0188	jz      short loc_23091       
-seg040:018A	test    byte ptr ds:0C5E1h, 1       
-seg040:018F	jnz     short loc_23091       
-seg040:0191	test    byte ptr ds:0C5E0h, 1       
-seg040:0196	jz      short loc_23091       
-seg040:0198	mov     word ptr ds:0C83Bh, 1       
-seg040:019E	mov     byte ptr ds:0C842h, 0       
-seg040:01A3	or      byte ptr ds:0C5E1h, 1       
-seg040:01A8	call    Sound_Lifecycle       
-seg040:01AB	pop     dx       
-seg040:01AC	pop     cx       
-seg040:01AD	pop     bx       
-seg040:01AE	pop     ax       
-seg040:01AF	retf       
+seg037:017F	push    ax       
+seg037:0180	push    bx       
+seg037:0181	push    cx       
+seg037:0182	push    dx       
+seg037:0183	test    byte_30622, 10h       
+seg037:0188	jz      short loc_23091       
+seg037:018A	test    byte_30621, 1       
+seg037:018F	jnz     short loc_23091       
+seg037:0191	test    byte_30620, 1       
+seg037:0196	jz      short loc_23091       
+seg037:0198	mov     word_3087B, 1       
+seg037:019E	mov     byte_30882, 0       
+seg037:01A3	or      byte_30621, 1       
+seg037:01A8	call    Sound_Lifecycle       
+seg037:01AB	pop     dx       
+seg037:01AC	pop     cx       
+seg037:01AD	pop     bx       
+seg037:01AE	pop     ax       
+seg037:01AF	retf       
 
 ;================================================================================
 ;; End of function handle_special_trigger

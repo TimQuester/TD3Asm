@@ -1,9 +1,9 @@
 ;================================================================================
 ;; Function: Sound_ClearVelocity
-;; Address: seg040:0EB8
+;; Address: seg037:0EB8
 ;; Size: 7 bytes (0x7)
 ;; Flags: None
-;; Segment: seg040
+;; Segment: seg037
 ;================================================================================
 
 ;; ----------------------------------------
@@ -15,8 +15,8 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg040:0EB8	mov     word ptr [si-34E3h], 0       
-seg040:0EBE	retn       
+seg037:0EB8	mov     word ptr [si-34E3h], 0       
+seg037:0EBE	retn       
 
 ;================================================================================
 ;; End of function Sound_ClearVelocity

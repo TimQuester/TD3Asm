@@ -1,9 +1,9 @@
 ;================================================================================
 ;; Function: GetVideoAdapterInfo
-;; Address: seg037:0063
+;; Address: seg034:0063
 ;; Size: 44 bytes (0x2C)
 ;; Flags: FAR
-;; Segment: seg037
+;; Segment: seg034
 ;================================================================================
 
 ;; ----------------------------------------
@@ -15,29 +15,29 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg037:0063	push    di       
-seg037:0064	push    si       
-seg037:0065	mov     ah, 12h       
-seg037:0067	mov     bl, 10h       
-seg037:0069	int     10h	; - VIDEO - ALTERNATE FUNCTION SELECT (PS, EGA, VGA, MCGA) - GET EGA INFO       
-seg037:006B	pop     si       
-seg037:006C	pop     di       
-seg037:006D	cmp     bl, 10h       
-seg037:0070	jz      short loc_21570       
-seg037:0072	mov     al, byte ptr es:unk_487       
-seg037:0076	test    al, 8       
-seg037:0078	jnz     short loc_21570       
-seg037:007A	test    al, 2       
-seg037:007C	jnz     short loc_21570       
-seg037:007E	and     cl, 0Fh       
-seg037:0081	cmp     cl, 9       
-seg037:0084	jnz     short loc_21570       
-seg037:0086	mov     al, bl       
-seg037:0088	inc     al       
-seg037:008A	cbw       
-seg037:008B	retf       
-seg037:008C	xor     ax, ax       
-seg037:008E	retf       
+seg034:0063	push    di       
+seg034:0064	push    si       
+seg034:0065	mov     ah, 12h       
+seg034:0067	mov     bl, 10h       
+seg034:0069	int     10h       
+seg034:006B	pop     si       
+seg034:006C	pop     di       
+seg034:006D	cmp     bl, 10h       
+seg034:0070	jz      short loc_21570       
+seg034:0072	mov     al, es:487h       
+seg034:0076	test    al, 8       
+seg034:0078	jnz     short loc_21570       
+seg034:007A	test    al, 2       
+seg034:007C	jnz     short loc_21570       
+seg034:007E	and     cl, 0Fh       
+seg034:0081	cmp     cl, 9       
+seg034:0084	jnz     short loc_21570       
+seg034:0086	mov     al, bl       
+seg034:0088	inc     al       
+seg034:008A	cbw       
+seg034:008B	retf       
+seg034:008C	xor     ax, ax       
+seg034:008E	retf       
 
 ;================================================================================
 ;; End of function GetVideoAdapterInfo

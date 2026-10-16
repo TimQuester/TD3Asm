@@ -1,52 +1,52 @@
 ;================================================================================
 ;; Function: SetScreenOffsets
-;; Address: seg008:0732
+;; Address: seg005:0732
 ;; Size: 25 bytes (0x19)
 ;; Flags: FAR
-;; Segment: seg008
+;; Segment: seg005
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg003:18B6 -> MenuDispatcher
-;;	call from seg004:0A70 -> ShowIntro
-;;	call from seg004:0B9D -> sub_ABD6
-;;	call from seg004:0BC0 -> sub_ABD6
-;;	call from seg004:0C4F -> sub_ABD6
-;;	call from seg004:0E3E -> sub_ABD6
-;;	call from seg004:1090 -> DrawCarRecords
-;;	call from seg004:10C3 -> DrawCarRecords
-;;	call from seg004:11DD -> DrawCarRecords
-;;	call from seg004:154D -> MainSelectScreen
-;;	call from seg004:204E -> sub_C018
-;;	call from seg004:24F9 -> sub_C018
-;;	call from seg004:258E -> sub_C018
-;;	call from seg004:2F76 -> sub_D04E
-;;	call from seg004:2F99 -> sub_D04E
-;;	call from seg004:2FED -> sub_D04E
-;;	call from seg004:3075 -> sub_D04E
-;;	call from seg004:3C9C -> SelectDriver
-;;	call from seg004:4109 -> sub_E20E
-;;	call from seg004:413C -> sub_E20E
-;;	call from seg004:416D -> sub_E20E
-;;	call from seg004:41AF -> sub_E20E
-;;	call from seg004:444F -> sub_E20E
-;;	call from seg004:44CB -> sub_E20E
-;;	call from seg004:4635 -> sub_E20E
-;;	call from seg004:493D -> sub_E84E
-;;	call from seg004:49FC -> ShowRecords
-;;	call from seg004:4A3C -> ShowRecords
-;;	call from seg004:4A5F -> ShowRecords
-;;	call from seg004:4AB1 -> ShowRecords
-;;	call from seg004:4AE1 -> ShowRecords
-;;	call from seg004:4CD5 -> ShowRecords
-;;	call from seg005:06EB -> sub_10122
-;;	call from seg005:071D -> sub_10122
-;;	call from seg005:07A8 -> sub_10122
-;;	call from seg005:07C9 -> sub_10122
-;;	call from seg005:07ED -> sub_10122
-;;	call from seg005:0CF5 -> sub_1080C
-;;	call from seg009:05AB -> DrawSomeText
+;;	call from seg000:18B6 -> MenuDispatcher
+;;	call from seg001:0A70 -> ShowIntro
+;;	call from seg001:0B9D -> Screen_ShowFinalStandings
+;;	call from seg001:0BC0 -> Screen_ShowFinalStandings
+;;	call from seg001:0C4F -> Screen_ShowFinalStandings
+;;	call from seg001:0E3E -> Screen_ShowFinalStandings
+;;	call from seg001:1090 -> DrawCarRecords
+;;	call from seg001:10C3 -> DrawCarRecords
+;;	call from seg001:11DD -> DrawCarRecords
+;;	call from seg001:154D -> MainSelectScreen
+;;	call from seg001:204E -> Screen_ComputerOpponentShowcase
+;;	call from seg001:24F9 -> Screen_ComputerOpponentShowcase
+;;	call from seg001:258E -> Screen_ComputerOpponentShowcase
+;;	call from seg001:2F76 -> Screen_SelectAddonTrackList
+;;	call from seg001:2F99 -> Screen_SelectAddonTrackList
+;;	call from seg001:2FED -> Screen_SelectAddonTrackList
+;;	call from seg001:3075 -> Screen_SelectAddonTrackList
+;;	call from seg001:3C9C -> SelectDriver
+;;	call from seg001:4109 -> Screen_AnnounceWinner
+;;	call from seg001:413C -> Screen_AnnounceWinner
+;;	call from seg001:416D -> Screen_AnnounceWinner
+;;	call from seg001:41AF -> Screen_AnnounceWinner
+;;	call from seg001:444F -> Screen_AnnounceWinner
+;;	call from seg001:44CB -> Screen_AnnounceWinner
+;;	call from seg001:4635 -> Screen_AnnounceWinner
+;;	call from seg001:493D -> Records_DrawDetailPanels
+;;	call from seg001:49FC -> ShowRecords
+;;	call from seg001:4A3C -> ShowRecords
+;;	call from seg001:4A5F -> ShowRecords
+;;	call from seg001:4AB1 -> ShowRecords
+;;	call from seg001:4AE1 -> ShowRecords
+;;	call from seg001:4CD5 -> ShowRecords
+;;	call from seg002:06EB -> Race_DrawMessageOverlay
+;;	call from seg002:071D -> Race_DrawMessageOverlay
+;;	call from seg002:07A8 -> Race_DrawMessageOverlay
+;;	call from seg002:07C9 -> Race_DrawMessageOverlay
+;;	call from seg002:07ED -> Race_DrawMessageOverlay
+;;	call from seg002:0CF5 -> Race_RenderWorldFrame
+;;	call from seg006:05AB -> DrawSomeText
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None
 ;; ----------------------------------------
@@ -54,18 +54,18 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg008:0732	push    bp       
-seg008:0733	mov     bp, sp       
-seg008:0735	mov     ax, [bp+yOffset]       
-seg008:0738	mov     ah, al       
-seg008:073A	sub     al, al       
-seg008:073C	mov     ds:90E1h, ax       
-seg008:073F	mov     ax, [bp+xOffset]       
-seg008:0742	mov     ah, al       
-seg008:0744	sub     al, al       
-seg008:0746	mov     ds:90E3h, ax       
-seg008:0749	pop     bp       
-seg008:074A	retf       
+seg005:0732	push    bp       
+seg005:0733	mov     bp, sp       
+seg005:0735	mov     ax, [bp+arg_2]       
+seg005:0738	mov     ah, al       
+seg005:073A	sub     al, al       
+seg005:073C	mov     word_2D121, ax       
+seg005:073F	mov     ax, [bp+arg_0]       
+seg005:0742	mov     ah, al       
+seg005:0744	sub     al, al       
+seg005:0746	mov     word_2D123, ax       
+seg005:0749	pop     bp       
+seg005:074A	retf       
 
 ;================================================================================
 ;; End of function SetScreenOffsets

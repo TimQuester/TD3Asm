@@ -1,9 +1,9 @@
 ;================================================================================
 ;; Function: Sound_LoadDuration
-;; Address: seg040:0EE4
+;; Address: seg037:0EE4
 ;; Size: 10 bytes (0xA)
 ;; Flags: None
-;; Segment: seg040
+;; Segment: seg037
 ;================================================================================
 
 ;; ----------------------------------------
@@ -15,10 +15,10 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg040:0EE4	mov     dx, [di]       
-seg040:0EE6	mov     [si-34DDh], dx       
-seg040:0EEA	add     di, 2       
-seg040:0EED	retn       
+seg037:0EE4	mov     dx, [di]       
+seg037:0EE6	mov     [si-34DDh], dx       
+seg037:0EEA	add     di, 2       
+seg037:0EED	retn       
 
 ;================================================================================
 ;; End of function Sound_LoadDuration

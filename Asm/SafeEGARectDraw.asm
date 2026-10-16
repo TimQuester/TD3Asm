@@ -1,14 +1,14 @@
 ;================================================================================
 ;; Function: SafeEGARectDraw
-;; Address: seg037:0001
+;; Address: seg034:0001
 ;; Size: 94 bytes (0x5E)
 ;; Flags: FAR
-;; Segment: seg037
+;; Segment: seg034
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg011:0031 -> EGA_DrawLine
+;;	call from seg008:0031 -> EGA_DrawLine
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None
 ;; ----------------------------------------
@@ -16,41 +16,41 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg037:0001	push    bp       
-seg037:0002	mov     bp, sp       
-seg037:0004	mov     ax, [bp+x]       
-seg037:0007	cmp     ax, ds:0BD51h       
-seg037:000B	jg      short loc_2153F       
-seg037:000D	cmp     ax, ds:0BD53h       
-seg037:0011	jge     short loc_214FA       
-seg037:0013	mov     ax, ds:0BD53h       
-seg037:0016	mov     bx, [bp+y]       
-seg037:0019	cmp     bx, ds:0BD53h       
-seg037:001D	jl      short loc_2153F       
-seg037:001F	cmp     bx, ds:0BD51h       
-seg037:0023	jle     short loc_2150D       
-seg037:0025	mov     bx, ds:0BD51h       
-seg037:0029	mov     cx, [bp+height]       
-seg037:002C	cmp     cx, ds:0BD55h       
-seg037:0030	jg      short loc_2153F       
-seg037:0032	cmp     cx, ds:0BD57h       
-seg037:0036	jge     short loc_21520       
-seg037:0038	mov     cx, ds:0BD57h       
-seg037:003C	mov     dx, [bp+width]       
-seg037:003F	cmp     dx, ds:0BD57h       
-seg037:0043	jl      short loc_2153F       
-seg037:0045	cmp     dx, ds:0BD55h       
-seg037:0049	jle     short loc_21533       
-seg037:004B	mov     dx, ds:0BD55h       
-seg037:004F	push    dx       
-seg037:0050	push    cx       
-seg037:0051	push    bx       
-seg037:0052	push    ax       
-seg037:0053	call    far ptr FillRectWithColor       
-seg037:0058	add     sp, 8       
-seg037:005B	xor     ax, ax       
-seg037:005D	pop     bp       
-seg037:005E	retf       
+seg034:0001	push    bp       
+seg034:0002	mov     bp, sp       
+seg034:0004	mov     ax, [bp+arg_0]       
+seg034:0007	cmp     ax, word_2FD91       
+seg034:000B	jg      short loc_2153F       
+seg034:000D	cmp     ax, word_2FD93       
+seg034:0011	jge     short loc_214FA       
+seg034:0013	mov     ax, word_2FD93       
+seg034:0016	mov     bx, [bp+arg_2]       
+seg034:0019	cmp     bx, word_2FD93       
+seg034:001D	jl      short loc_2153F       
+seg034:001F	cmp     bx, word_2FD91       
+seg034:0023	jle     short loc_2150D       
+seg034:0025	mov     bx, word_2FD91       
+seg034:0029	mov     cx, [bp+arg_4]       
+seg034:002C	cmp     cx, word_2FD95       
+seg034:0030	jg      short loc_2153F       
+seg034:0032	cmp     cx, word_2FD97       
+seg034:0036	jge     short loc_21520       
+seg034:0038	mov     cx, word_2FD97       
+seg034:003C	mov     dx, [bp+arg_6]       
+seg034:003F	cmp     dx, word_2FD97       
+seg034:0043	jl      short loc_2153F       
+seg034:0045	cmp     dx, word_2FD95       
+seg034:0049	jle     short loc_21533       
+seg034:004B	mov     dx, word_2FD95       
+seg034:004F	push    dx       
+seg034:0050	push    cx       
+seg034:0051	push    bx       
+seg034:0052	push    ax       
+seg034:0053	call    FillRectWithColor       
+seg034:0058	add     sp, 8       
+seg034:005B	xor     ax, ax       
+seg034:005D	pop     bp       
+seg034:005E	retf       
 
 ;================================================================================
 ;; End of function SafeEGARectDraw

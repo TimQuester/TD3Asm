@@ -1,14 +1,14 @@
 ;================================================================================
 ;; Function: empty_stub
-;; Address: seg007:0001
+;; Address: seg004:0001
 ;; Size: 5 bytes (0x5)
 ;; Flags: FAR
-;; Segment: seg007
+;; Segment: seg004
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg003:0F97 -> handle_system_input
+;;	call from seg000:0F97 -> handle_system_input
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None
 ;; ----------------------------------------
@@ -16,10 +16,10 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg007:0001	push    bp       
-seg007:0002	mov     bp, sp       
-seg007:0004	pop     bp       
-seg007:0005	retf       
+seg004:0001	push    bp       
+seg004:0002	mov     bp, sp       
+seg004:0004	pop     bp       
+seg004:0005	retf       
 
 ;================================================================================
 ;; End of function empty_stub

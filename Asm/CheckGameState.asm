@@ -1,40 +1,41 @@
 ;================================================================================
 ;; Function: CheckGameState
-;; Address: seg009:0534
+;; Address: seg006:0534
 ;; Size: 54 bytes (0x36)
 ;; Flags: None
-;; Segment: seg009
+;; Segment: seg006
 ;================================================================================
 
 ;; ----------------------------------------
-;; Called FROM (incoming xrefs): None
+;; Called FROM (incoming xrefs):
+;;	call from seg006:00CE -> GS_DispatchEvent
 ;; Calls TO (outgoing xrefs): None
 ;; Data references:
-;;	data ref 0x000352F2 -> data_000352F2
+;;	data ref dseg:94B2 -> byte_2D4F2
 ;; ----------------------------------------
 
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg009:0534	cmp     byte ptr ds:94B2h, 0       
-seg009:0539	jz      short loc_16878       
-seg009:053B	sub     ax, ax       
-seg009:053D	push    ax       
-seg009:053E	call    _Sound_ProcessEvent       
-seg009:0543	add     sp, 2       
-seg009:0546	mov     byte ptr ds:0B6D5h, 1       
-seg009:054B	mov     ax, 19h       
-seg009:054E	push    ax       
-seg009:054F	call    MenuDispatcher       
-seg009:0554	add     sp, 2       
-seg009:0557	retn       
-seg009:0558	call    ActivateGameMode       
-seg009:055B	sub     ax, ax       
-seg009:055D	mov     ds:byte_2D518, al       
-seg009:0560	push    ax       
-seg009:0561	call    _Sound_ProcessEvent	; ManageGameObjects(25)       
-seg009:0566	add     sp, 2       
-seg009:0569	retn       
+seg006:0534	cmp     byte_2D4F2, 0       
+seg006:0539	jz      short loc_16878       
+seg006:053B	sub     ax, ax       
+seg006:053D	push    ax       
+seg006:053E	call    _Sound_ProcessEvent       
+seg006:0543	add     sp, 2       
+seg006:0546	mov     byte_2F715, 1       
+seg006:054B	mov     ax, 19h       
+seg006:054E	push    ax       
+seg006:054F	call    MenuDispatcher       
+seg006:0554	add     sp, 2       
+seg006:0557	retn       
+seg006:0558	call    ActivateGameMode       
+seg006:055B	sub     ax, ax       
+seg006:055D	mov     byte_25718, al       
+seg006:0560	push    ax       
+seg006:0561	call    _Sound_ProcessEvent       
+seg006:0566	add     sp, 2       
+seg006:0569	retn       
 
 ;================================================================================
 ;; End of function CheckGameState

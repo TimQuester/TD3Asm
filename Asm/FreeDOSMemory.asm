@@ -1,14 +1,14 @@
 ;================================================================================
 ;; Function: FreeDOSMemory
-;; Address: seg041:0001
+;; Address: seg038:0001
 ;; Size: 18 bytes (0x12)
 ;; Flags: FAR
-;; Segment: seg041
+;; Segment: seg038
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg040:030F -> LoadGameData
+;;	call from seg037:030F -> LoadGameData
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None
 ;; ----------------------------------------
@@ -16,17 +16,17 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg041:0001	push    bp       
-seg041:0002	mov     bp, sp       
-seg041:0004	push    es       
-seg041:0005	les     ax, [bp+mem_block]       
-seg041:0008	mov     ah, 49h       
-seg041:000A	int     21h	; DOS - 2+ - FREE MEMORY       
-seg041:000C	jb      short loc_23F8B       
-seg041:000E	sub     ax, ax       
-seg041:0010	pop     es       
-seg041:0011	pop     bp       
-seg041:0012	retf       
+seg038:0001	push    bp       
+seg038:0002	mov     bp, sp       
+seg038:0004	push    es       
+seg038:0005	les     ax, [bp+arg_0]       
+seg038:0008	mov     ah, 49h       
+seg038:000A	int     21h       
+seg038:000C	jb      short loc_23F8B       
+seg038:000E	sub     ax, ax       
+seg038:0010	pop     es       
+seg038:0011	pop     bp       
+seg038:0012	retf       
 
 ;================================================================================
 ;; End of function FreeDOSMemory

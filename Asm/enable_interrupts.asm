@@ -1,14 +1,14 @@
 ;================================================================================
 ;; Function: enable_interrupts
-;; Address: seg008:0661
+;; Address: seg005:0661
 ;; Size: 2 bytes (0x2)
 ;; Flags: FAR
-;; Segment: seg008
+;; Segment: seg005
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg003:0833 -> CallMenuAndExit
+;;	call from seg000:0833 -> unknown
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None
 ;; ----------------------------------------
@@ -16,8 +16,8 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg008:0661	sti       
-seg008:0662	retf       
+seg005:0661	sti       
+seg005:0662	retf       
 
 ;================================================================================
 ;; End of function enable_interrupts

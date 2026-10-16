@@ -1,27 +1,27 @@
 ;================================================================================
 ;; Function: SetGraphicsPosition
-;; Address: seg008:076A
+;; Address: seg005:076A
 ;; Size: 25 bytes (0x19)
 ;; Flags: FAR
-;; Segment: seg008
+;; Segment: seg005
 ;================================================================================
 
 ;; ----------------------------------------
 ;; Called FROM (incoming xrefs):
-;;	call from seg004:155D -> MainSelectScreen
-;;	call from seg004:1A08 -> DisplayCreditsInIntro
-;;	call from seg004:2262 -> sub_C018
-;;	call from seg004:24EA -> sub_C018
-;;	call from seg004:3CAC -> SelectDriver
-;;	call from seg004:3D25 -> SelectDriver
-;;	call from seg004:3DDA -> SelectDriver
-;;	call from seg004:3E79 -> SelectDriver
-;;	call from seg004:4119 -> sub_E20E
-;;	call from seg004:414C -> sub_E20E
-;;	call from seg004:417D -> sub_E20E
-;;	call from seg004:4A6F -> ShowRecords
-;;	call from seg004:4A90 -> ShowRecords
-;;	call from seg004:4AC1 -> ShowRecords
+;;	call from seg001:155D -> MainSelectScreen
+;;	call from seg001:1A08 -> DisplayCreditsInIntro
+;;	call from seg001:2262 -> Screen_ComputerOpponentShowcase
+;;	call from seg001:24EA -> Screen_ComputerOpponentShowcase
+;;	call from seg001:3CAC -> SelectDriver
+;;	call from seg001:3D25 -> SelectDriver
+;;	call from seg001:3DDA -> SelectDriver
+;;	call from seg001:3E79 -> SelectDriver
+;;	call from seg001:4119 -> Screen_AnnounceWinner
+;;	call from seg001:414C -> Screen_AnnounceWinner
+;;	call from seg001:417D -> Screen_AnnounceWinner
+;;	call from seg001:4A6F -> ShowRecords
+;;	call from seg001:4A90 -> ShowRecords
+;;	call from seg001:4AC1 -> ShowRecords
 ;; Calls TO (outgoing xrefs): None
 ;; Data references: None
 ;; ----------------------------------------
@@ -29,18 +29,18 @@
 ;; Disassembly:
 ;; Address (seg:offset)	Instruction
 ;;------------------------------------------------------------
-seg008:076A	push    bp       
-seg008:076B	mov     bp, sp       
-seg008:076D	mov     al, [bp+x]       
-seg008:0770	mov     ds:90E7h, al       
-seg008:0773	mov     al, [bp+y]       
-seg008:0776	sub     ah, ah       
-seg008:0778	shl     ax, 1       
-seg008:077A	shl     ax, 1       
-seg008:077C	shl     ax, 1       
-seg008:077E	mov     ds:90E5h, ax       
-seg008:0781	pop     bp       
-seg008:0782	retf       
+seg005:076A	push    bp       
+seg005:076B	mov     bp, sp       
+seg005:076D	mov     al, [bp+arg_0]       
+seg005:0770	mov     byte_2D127, al       
+seg005:0773	mov     al, [bp+arg_2]       
+seg005:0776	sub     ah, ah       
+seg005:0778	shl     ax, 1       
+seg005:077A	shl     ax, 1       
+seg005:077C	shl     ax, 1       
+seg005:077E	mov     word_2D125, ax       
+seg005:0781	pop     bp       
+seg005:0782	retf       
 
 ;================================================================================
 ;; End of function SetGraphicsPosition
